@@ -9,8 +9,7 @@
     "lint": "tsc; prettier --check . --ignore-path=.prettierignore",
     "format": "prettier --write . --ignore-path=.prettierignore",
     "test": "tsx --env-file=./test/.env ./test/index.test.mts",
-    "build": "tsup",
-    "deploy": "pnpm publish --no-git-checks"
+    "build": "tsup"
   },
   "prettier": {
     "printWidth": 100,
