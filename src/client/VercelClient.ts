@@ -38,9 +38,6 @@ export class VercelClient {
     return this.#token;
   }
 
-  /**
-   * Update the client's token.
-   */
   public set token(newToken: string) {
     this.#rawToken = newToken;
     this.#token = `Bearer ${newToken}`;
