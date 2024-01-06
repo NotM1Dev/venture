@@ -9,7 +9,8 @@ import type {
   ListDeploymentsParams,
   ListTeamsParams,
   ListUserEventsParams,
-  CreateProjectParams
+  CreateProjectParams,
+  DeleteProjectParams
 } from './types';
 
 type PartialParams = Record<string, any>;
@@ -80,6 +81,16 @@ const Routes = {
   PROJECTS: {
     CREATE(params: CreateProjectParams) {
       return `https://api.vercel.com/v9/projects${params.teamId ? `?teamId=${params.teamId}` : ''}`;
+    },
+
+    DELETE(params: DeleteProjectParams) {
+      if (!params.idOrName) {
+        throw new Error('Project ID or name must be provided');
+      }
+
+      return `https://api.vercel.com/v9/projects/${params.idOrName}${
+        params.teamId ? `?teamId=${params.teamId}` : ''
+      }`;
     }
   },
 
