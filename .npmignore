@@ -1,0 +1,20 @@
+# dependencies
+node_modules
+
+# source
+src
+
+# lockfile
+pnpm-lock.yaml
+
+# typescript
+tsconfig.json
+tsup.config.ts
+
+# env files
+**/*.env*
+!**/*.env.example*
+
+# misc
+**/*.log*
+**/*.DS_Store

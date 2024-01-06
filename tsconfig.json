@@ -1,0 +1,11 @@
+{
+  "extends": "@wlix/tsconfig/main.json",
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "ESNext",
+    "removeComments": false,
+    "noEmit": true,
+    "outDir": "./dist"
+  },
+  "include": ["src"]
+}
