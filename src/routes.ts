@@ -1,14 +1,14 @@
 import type {
-  ListDeploymentsParams,
-  ListTeamsParams,
-  ListUserEventsParams,
-  DomainAvailableParams,
-  DomainPriceParams,
-  GetTeamParams,
-  DeleteTeamParams,
   AssignAliasParams,
   DeleteAliasParams,
-  GetAliasParams
+  DeleteTeamParams,
+  DomainAvailableParams,
+  DomainPriceParams,
+  GetAliasParams,
+  GetTeamParams,
+  ListDeploymentsParams,
+  ListTeamsParams,
+  ListUserEventsParams
 } from './types';
 
 type PartialParams = Record<string, any>;
@@ -18,61 +18,6 @@ type PartialParams = Record<string, any>;
  * @see https://vercel.com/docs/rest-api/endpoints
  */
 const Routes = {
-  USER: {
-    GET() {
-      return 'https://api.vercel.com/v2/user';
-    },
-
-    DELETE() {
-      return 'https://api.vercel.com/v1/user';
-    },
-
-    LIST_EVENTS(params?: ListUserEventsParams) {
-      const query = new URLSearchParams(params as PartialParams).toString();
-      return `https://api.vercel.com/v3/events${query ? `?${query}` : ''}`;
-    }
-  },
-
-  DEPLOYMENTS: {
-    LIST(params?: ListDeploymentsParams) {
-      const query = new URLSearchParams(params as PartialParams).toString();
-      return `https://api.vercel.com/v6/deployments${query ? `?${query}` : ''}`;
-    }
-  },
-
-  TEAMS: {
-    LIST(params?: ListTeamsParams) {
-      const query = new URLSearchParams(params as PartialParams).toString();
-      return `https://api.vercel.com/v2/teams${query ? `?${query}` : ''}`;
-    },
-
-    GET(params?: GetTeamParams) {
-      let url = `https://api.vercel.com/v2/teams/${params?.teamId || ''}`;
-
-      if (params?.slug) {
-        url += `?slug=${params.slug}`;
-      }
-
-      return url;
-    },
-
-    CREATE() {
-      return 'https://api.vercel.com/v1/teams';
-    },
-
-    DELETE(params: Omit<DeleteTeamParams, 'reasons'>) {
-      if (!params.teamId) {
-        throw new Error('Team ID must be provided');
-      }
-
-      const withNewDefaultTeamId = `?newDefaultTeamId=${params.newDefaultTeamId}`;
-
-      return `https://api.vercel.com/v1/teams/${params.teamId}${
-        params.newDefaultTeamId ? withNewDefaultTeamId : ''
-      }`;
-    }
-  },
-
   ALIASES: {
     ASSIGN(params: Pick<AssignAliasParams, 'id'>) {
       if (!params.id) {
@@ -104,6 +49,13 @@ const Routes = {
     }
   },
 
+  DEPLOYMENTS: {
+    LIST(params?: ListDeploymentsParams) {
+      const query = new URLSearchParams(params as PartialParams).toString();
+      return `https://api.vercel.com/v6/deployments${query ? `?${query}` : ''}`;
+    }
+  },
+
   DOMAINS: {
     AVAILABLE(params: DomainAvailableParams) {
       if (!params.name) {
@@ -121,6 +73,54 @@ const Routes = {
 
       const query = new URLSearchParams(params as PartialParams).toString();
       return `https://api.vercel.com/v4/domains/price?${query}`;
+    }
+  },
+
+  TEAMS: {
+    CREATE() {
+      return 'https://api.vercel.com/v1/teams';
+    },
+
+    DELETE(params: Omit<DeleteTeamParams, 'reasons'>) {
+      if (!params.teamId) {
+        throw new Error('Team ID must be provided');
+      }
+
+      const withNewDefaultTeamId = `?newDefaultTeamId=${params.newDefaultTeamId}`;
+
+      return `https://api.vercel.com/v1/teams/${params.teamId}${
+        params.newDefaultTeamId ? withNewDefaultTeamId : ''
+      }`;
+    },
+
+    GET(params?: GetTeamParams) {
+      let url = `https://api.vercel.com/v2/teams/${params?.teamId || ''}`;
+
+      if (params?.slug) {
+        url += `?slug=${params.slug}`;
+      }
+
+      return url;
+    },
+
+    LIST(params?: ListTeamsParams) {
+      const query = new URLSearchParams(params as PartialParams).toString();
+      return `https://api.vercel.com/v2/teams${query ? `?${query}` : ''}`;
+    }
+  },
+
+  USER: {
+    DELETE() {
+      return 'https://api.vercel.com/v1/user';
+    },
+
+    GET() {
+      return 'https://api.vercel.com/v2/user';
+    },
+
+    LIST_EVENTS(params?: ListUserEventsParams) {
+      const query = new URLSearchParams(params as PartialParams).toString();
+      return `https://api.vercel.com/v3/events${query ? `?${query}` : ''}`;
     }
   }
 };
