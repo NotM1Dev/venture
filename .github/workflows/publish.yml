@@ -25,7 +25,7 @@ jobs:
       - name: 📦 Dependencies
         run: pnpm install
 
-      - name: Lint
+      - name: ✨ Lint
         run: pnpm run lint
 
       - name: 🛠️ Build
