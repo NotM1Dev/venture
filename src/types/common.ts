@@ -43,6 +43,12 @@ export type DeploymentState =
   | 'READY'
   | 'CANCELED';
 
+export type DeploymentSubstate = 'STAGED' | 'PROMOTED';
+export type JobStatus = 'succeeded' | 'failed' | 'skipped' | 'pending' | 'in-progress';
+export type ChecksConclusion = 'succeeded' | 'failed' | 'skipped' | 'canceled';
+export type ChecksState = 'registered' | 'running' | 'completed';
+export type Plan = 'pro' | 'enterprise' | 'hobby' | 'oss';
+
 export type Framework =
   | 'blitzjs'
   | 'nextjs'

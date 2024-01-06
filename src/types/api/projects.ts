@@ -1,4 +1,13 @@
-import type { Framework, ACLAction } from '../index';
+import type {
+  Framework,
+  ACLAction,
+  DeploymentState,
+  DeploymentSubstate,
+  Plan,
+  ChecksConclusion,
+  ChecksState,
+  JobStatus
+} from '../index';
 
 export interface CreateProjectEnvironmentVariable {
   /**
@@ -303,10 +312,10 @@ export interface CreateProjectData {
     id: string;
     meta?: { [key: string]: string };
     monorepoManager?: string | null;
-    plan: 'pro' | 'enterprise' | 'hobby' | 'oss';
+    plan: Plan;
     private: boolean;
-    readyState: 'BUILDING' | 'ERROR' | 'INITIALIZING' | 'QUEUED' | 'READY' | 'CANCELED';
-    readySubstate?: 'STAGED' | 'PROMOTED';
+    readyState: DeploymentState;
+    readySubstate?: DeploymentSubstate;
     requestedAt?: number;
     target?: string | null;
     teamId?: string | null;
@@ -314,8 +323,8 @@ export interface CreateProjectData {
     url: string;
     userId: string;
     withCache?: boolean;
-    checksConclusion?: 'succeeded' | 'failed' | 'skipped' | 'canceled';
-    checksState?: 'registered' | 'running' | 'completed';
+    checksConclusion?: ChecksConclusion;
+    checksState?: ChecksState;
     readyAt?: number;
     buildingAt?: number;
 
@@ -429,10 +438,10 @@ export interface CreateProjectData {
       id: string;
       meta?: { [key: string]: string };
       monorepoManager?: string | null;
-      plan: 'pro' | 'enterprise' | 'hobby' | 'oss';
+      plan: Plan;
       private: boolean;
-      readyState: 'BUILDING' | 'ERROR' | 'INITIALIZING' | 'QUEUED' | 'READY' | 'CANCELED';
-      readySubstate?: 'STAGED' | 'PROMOTED';
+      readyState: DeploymentState;
+      readySubstate?: DeploymentSubstate;
       requestedAt?: number;
       target?: string | null;
       teamId?: string | null;
@@ -440,8 +449,8 @@ export interface CreateProjectData {
       url: string;
       userId: string;
       withCache?: boolean;
-      checksConclusion?: 'succeeded' | 'failed' | 'skipped' | 'canceled';
-      checksState?: 'registered' | 'running' | 'completed';
+      checksConclusion?: ChecksConclusion;
+      checksState?: ChecksState;
       readyAt?: number;
       buildingAt?: number;
       /** Whether or not preview comments are enabled for the deployment */
@@ -612,7 +621,7 @@ export interface CreateProjectData {
   lastAliasRequest?: {
     fromDeploymentId: string;
     toDeploymentId: string;
-    jobStatus: 'succeeded' | 'failed' | 'skipped' | 'pending' | 'in-progress';
+    jobStatus: JobStatus;
     requestedAt: number;
     type: 'promote' | 'rollback';
   } | null;

@@ -1,4 +1,10 @@
-import type { NodeVersion, Pagination, DeploymentState, Framework } from '../common';
+import type {
+  NodeVersion,
+  Pagination,
+  DeploymentState,
+  Framework,
+  DeploymentSubstate
+} from '../common';
 
 export interface ListDeploymentsParams {
   /**
@@ -98,12 +104,12 @@ export interface DeploymentData {
     /**
      * In which state is the deployment.
      */
-    state?: 'BUILDING' | 'ERROR' | 'INITIALIZING' | 'QUEUED' | 'READY' | 'CANCELED';
+    state?: DeploymentState;
 
     /**
      * In which state is the deployment.
      */
-    readyState?: 'BUILDING' | 'ERROR' | 'INITIALIZING' | 'QUEUED' | 'READY' | 'CANCELED';
+    readyState?: DeploymentSubstate;
 
     /**
      * The type of the deployment.
