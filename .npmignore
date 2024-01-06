@@ -1,16 +1,19 @@
 # dependencies
 node_modules/
 
-# source
+# source code
 src/
 
 # lockfile
 pnpm-lock.yaml
 
+# testing
+test/
+
 # git & github
-.git
 .gitignore
-.github
+.git/
+.github/
 
 # typescript
 tsconfig.json
