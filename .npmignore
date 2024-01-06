@@ -1,15 +1,23 @@
 # dependencies
-node_modules
+node_modules/
 
 # source
-src
+src/
 
 # lockfile
 pnpm-lock.yaml
 
+# git & github
+.git
+.gitignore
+.github
+
 # typescript
 tsconfig.json
 tsup.config.ts
+
+# prettier
+.prettierignore
 
 # env files
 **/*.env*
