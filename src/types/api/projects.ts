@@ -58,7 +58,7 @@ export interface CreateProjectParams {
   /**
    * The Team identifier or slug to perform the request on behalf of.
    */
-  teamId: string;
+  teamId?: string;
 
   /**
    * The build command for this project.
