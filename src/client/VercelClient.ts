@@ -1,20 +1,20 @@
-import { UserManager } from './managers/User';
-import { TeamsManager } from './managers/Teams';
-import { DeploymentsManager } from './managers/Deployments';
 import { AliasesManager } from './managers/Aliases';
+import { DeploymentsManager } from './managers/Deployments';
 import { DomainsManager } from './managers/Domains';
 import { ProjectsManager } from './managers/Projects';
+import { TeamsManager } from './managers/Teams';
+import { UserManager } from './managers/User';
 
 export class VercelClient {
   #token: string;
   #rawToken: string;
 
-  public user = new UserManager(this);
-  public teams = new TeamsManager(this);
-  public deployments = new DeploymentsManager(this);
-  public projects = new ProjectsManager(this);
-  public domains = new DomainsManager(this);
   public aliases = new AliasesManager(this);
+  public deployments = new DeploymentsManager(this);
+  public domains = new DomainsManager(this);
+  public projects = new ProjectsManager(this);
+  public teams = new TeamsManager(this);
+  public user = new UserManager(this);
 
   /**
    * Creates a new instance of the class.
