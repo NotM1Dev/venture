@@ -3,6 +3,7 @@ import { TeamsManager } from './managers/Teams';
 import { DeploymentsManager } from './managers/Deployments';
 import { AliasesManager } from './managers/Aliases';
 import { DomainsManager } from './managers/Domains';
+import { ProjectsManager } from './managers/Projects';
 
 export class VercelClient {
   #token: string;
@@ -11,6 +12,7 @@ export class VercelClient {
   public user = new UserManager(this);
   public teams = new TeamsManager(this);
   public deployments = new DeploymentsManager(this);
+  public projects = new ProjectsManager(this);
   public domains = new DomainsManager(this);
   public aliases = new AliasesManager(this);
 
