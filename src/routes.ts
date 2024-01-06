@@ -8,7 +8,8 @@ import type {
   GetTeamParams,
   ListDeploymentsParams,
   ListTeamsParams,
-  ListUserEventsParams
+  ListUserEventsParams,
+  CreateProjectParams
 } from './types';
 
 type PartialParams = Record<string, any>;
@@ -73,6 +74,12 @@ const Routes = {
 
       const query = new URLSearchParams(params as PartialParams).toString();
       return `https://api.vercel.com/v4/domains/price?${query}`;
+    }
+  },
+
+  PROJECTS: {
+    CREATE(params: CreateProjectParams) {
+      return `https://api.vercel.com/v9/projects${params.teamId ? `?teamId=${params.teamId}` : ''}`;
     }
   },
 
