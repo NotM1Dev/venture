@@ -19,12 +19,11 @@ export class TeamsManager extends BaseManager {
   /**
    * Get information for the Team specified by the `teamId` parameter.
    */
-  public get(params: { teamId: string } & GetTeamParams): Promise<AnyTeam>;
-  public get(params: { slug: string } & GetTeamParams): Promise<AnyTeam>;
-  public get(params?: ValidGetTeamParams): Promise<ListTeamData>;
+  public async get(params: { teamId: string } & GetTeamParams): Promise<AnyTeam>;
+  public async get(params: { slug: string } & GetTeamParams): Promise<AnyTeam>;
+  public async get(params?: ValidGetTeamParams): Promise<ListTeamData>;
 
-  public async get<T extends ValidGetTeamParams>(params?: T): Promise<GetTeamReturnType<T>>;
-  public async get(params?: ValidGetTeamParams): Promise<ListTeamData> {
+  public async get<T extends ValidGetTeamParams>(params?: T): Promise<GetTeamReturnType<T>> {
     const team = await axios.get(Routes.TEAMS.GET(params), {
       headers: {
         Authorization: this.client.token
