@@ -1,5 +1,5 @@
 {
-  "name": "vercel-js",
+  "name": "vercel.js",
   "description": "A library for using Vercel's API.",
   "version": "0.0.1",
   "main": "./dist/index.js",
