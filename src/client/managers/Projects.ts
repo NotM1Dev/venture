@@ -1,3 +1,30 @@
+import type { CreateProjectData, CreateProjectParams } from '../../index';
 import { BaseManager } from './Base';
 
-export class ProjectsManager extends BaseManager {}
+import Routes from '../../routes';
+import axios from 'axios';
+
+export class ProjectsManager extends BaseManager {
+  /**
+   * Allows to create a new project with the provided configuration.
+   * It only requires the project `name` but more configuration can
+   * be provided to override the defaults.
+   * @see https://vercel.com/docs/rest-api/endpoints#create-a-new-project
+   */
+  public async create(params: CreateProjectParams): Promise<CreateProjectData> {
+    const project = await axios.post(
+      Routes.PROJECTS.CREATE(params),
+      {
+        ...params,
+        teamId: undefined
+      },
+      {
+        headers: {
+          Authorization: this.client.token
+        }
+      }
+    );
+
+    return project.data;
+  }
+}
