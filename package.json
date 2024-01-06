@@ -11,6 +11,9 @@
     "test": "tsx --env-file=./test/.env ./test/index.test.mts",
     "build": "tsup"
   },
+  "files": [
+    "dist"
+  ],
   "prettier": {
     "printWidth": 100,
     "tabWidth": 2,
