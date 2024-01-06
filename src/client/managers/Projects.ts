@@ -1,4 +1,9 @@
-import type { CreateProjectData, CreateProjectParams } from '../../index';
+import type {
+  CreateProjectData,
+  CreateProjectParams,
+  DeleteProjectData,
+  DeleteProjectParams
+} from '../../index';
 import { BaseManager } from './Base';
 
 import Routes from '../../routes';
@@ -26,5 +31,20 @@ export class ProjectsManager extends BaseManager {
     );
 
     return project.data;
+  }
+
+  /**
+   * Delete a specific project by passing
+   * either the project id or name.
+   * @see https://vercel.com/docs/rest-api/endpoints#delete-a-project
+   */
+  public async delete(params: DeleteProjectParams): Promise<DeleteProjectData> {
+    const data = await axios.delete(Routes.PROJECTS.DELETE(params), {
+      headers: {
+        Authorization: this.client.token
+      }
+    });
+
+    return data.data;
   }
 }
