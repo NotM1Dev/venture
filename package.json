@@ -29,6 +29,8 @@
     "node",
     "client"
   ],
+  "repository": "https://github.com/m1-dev/Vercel.js",
+  "homepage": "https://github.com/m1-dev/Vercel.js",
   "author": "M1",
   "license": "MIT",
   "type": "commonjs",
