@@ -518,7 +518,7 @@ export interface CreateDeploymentParams {
   withLatestCommit?: boolean;
 }
 
-export interface CreateDeploymenData {
+export interface CreateDeploymentData {
   build: {
     /**
      * The keys of the environment variables that were assigned during the build phase.
