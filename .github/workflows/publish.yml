@@ -6,7 +6,7 @@ on:
 
 jobs:
   release:
-    name: Publish
+    name: Publish Vercel.js
     runs-on: ubuntu-latest
     steps:
       - uses: pnpm/action-setup@v2
@@ -32,6 +32,6 @@ jobs:
         run: pnpm run build
 
       - name: 🚀 Deploy
-        run: pnpm publish --no-git-checks
+        run: pnpm run deploy:vercel.js
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}

@@ -1,23 +1,12 @@
 {
-  "name": "vercel.js-workspace",
-  "description": "Monorepo for the Vercel.js package.",
-  "private": true,
-  "version": "0.0.0",
+  "name": "vercel.js",
+  "description": "A library for using Vercel's API.",
+  "version": "0.0.6",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
-  "prettier": {
-    "printWidth": 100,
-    "tabWidth": 2,
-    "arrowParens": "always",
-    "trailingComma": "none",
-    "jsxSingleQuote": true,
-    "singleQuote": true,
-    "semi": true
-  },
   "scripts": {
-    "lint": "tsc; prettier --check . --ignore-path=.prettierignore",
-    "format": "prettier --write . --ignore-path=.prettierignore",
+    "lint": "tsc",
     "test": "tsx --env-file=./test/.env ./test/index.mts",
     "build": "tsup"
   },
