@@ -10,7 +10,8 @@ import type {
   ListTeamsParams,
   ListUserEventsParams,
   CreateProjectParams,
-  DeleteProjectParams
+  DeleteProjectParams,
+  CreateDeploymentParams
 } from './types';
 
 type PartialParams = Record<string, any>;
@@ -52,6 +53,13 @@ const Routes = {
   },
 
   DEPLOYMENTS: {
+    CREATE(
+      params: Pick<CreateDeploymentParams, 'forceNew' | 'skipAutoDetectionConfirmation' | 'teamId'>
+    ) {
+      const query = new URLSearchParams(params as PartialParams).toString();
+      return `https://api.vercel.com/v13/deployments${query ? `?${query}` : ''}`;
+    },
+
     LIST(params?: ListDeploymentsParams) {
       const query = new URLSearchParams(params as PartialParams).toString();
       return `https://api.vercel.com/v6/deployments${query ? `?${query}` : ''}`;
