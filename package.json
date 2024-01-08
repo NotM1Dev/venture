@@ -16,7 +16,8 @@
     "lint": "prettier --check . --ignore-path=.prettierignore; turbo run build",
     "format": "prettier --write . --ignore-path=.prettierignore",
     "test": "turbo run test",
-    "build": "turbo run build"
+    "build": "turbo run build",
+    "deploy:vercel.js": "cd ./packages/horizon.js && pnpm publish --no-git-checks"
   },
   "repository": "https://github.com/m1-dev/Vercel.js",
   "homepage": "https://github.com/m1-dev/Vercel.js",
