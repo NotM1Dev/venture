@@ -1,8 +1,5 @@
 {
-  "name": "@/internals",
+  "name": "internals",
   "version": "0.0.0",
-  "private": true,
-  "devDependencies": {
-    "@wlix/tsconfig": "^0.0.1"
-  }
+  "private": true
 }
