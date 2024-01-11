@@ -26,6 +26,7 @@
   "type": "commonjs",
   "devDependencies": {
     "@types/node": "^20.10.6",
+    "turbo": "latest",
     "internals": "workspace:*",
     "prettier": "^3.1.1"
   }
