@@ -4,11 +4,11 @@
   "description": "Monorepo for the Vercel.js package.",
   "private": true,
   "prettier": {
-    "printWidth": 100,
+    "printWidth": 110,
     "tabWidth": 2,
     "arrowParens": "always",
     "trailingComma": "none",
-    "jsxSingleQuote": true,
+    "jsxSingleQuote": false,
     "singleQuote": true,
     "semi": true
   },

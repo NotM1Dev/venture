@@ -35,13 +35,7 @@ export interface Pagination {
   prev: number | null;
 }
 
-export type DeploymentState =
-  | 'BUILDING'
-  | 'ERROR'
-  | 'INITIALIZING'
-  | 'QUEUED'
-  | 'READY'
-  | 'CANCELED';
+export type DeploymentState = 'BUILDING' | 'ERROR' | 'INITIALIZING' | 'QUEUED' | 'READY' | 'CANCELED';
 
 export type DeploymentSubstate = 'STAGED' | 'PROMOTED';
 export type JobStatus = 'succeeded' | 'failed' | 'skipped' | 'pending' | 'in-progress';

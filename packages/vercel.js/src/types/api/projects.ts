@@ -637,11 +637,7 @@ export interface CreateProjectData {
   trustedIps?:
     | (
         | {
-            deploymentType:
-              | 'all'
-              | 'preview'
-              | 'prod_deployment_urls_and_all_previews'
-              | 'production';
+            deploymentType: 'all' | 'preview' | 'prod_deployment_urls_and_all_previews' | 'production';
             addresses: {
               value: string;
               note?: string;
@@ -649,11 +645,7 @@ export interface CreateProjectData {
             protectionMode: 'additional' | 'exclusive';
           }
         | {
-            deploymentType:
-              | 'all'
-              | 'preview'
-              | 'prod_deployment_urls_and_all_previews'
-              | 'production';
+            deploymentType: 'all' | 'preview' | 'prod_deployment_urls_and_all_previews' | 'production';
           }
       )
     | null;

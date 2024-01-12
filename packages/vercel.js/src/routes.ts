@@ -37,9 +37,7 @@ const Routes = {
 
       const withTeamId = `?teamId=${params.teamId}`;
 
-      return `https://api.vercel.com/v2/aliases/${params.aliasId}/${
-        params.teamId ? withTeamId : ''
-      }`;
+      return `https://api.vercel.com/v2/aliases/${params.aliasId}/${params.teamId ? withTeamId : ''}`;
     },
 
     GET(params: GetAliasParams) {
@@ -53,9 +51,7 @@ const Routes = {
   },
 
   DEPLOYMENTS: {
-    CREATE(
-      params: Pick<CreateDeploymentParams, 'forceNew' | 'skipAutoDetectionConfirmation' | 'teamId'>
-    ) {
+    CREATE(params: Pick<CreateDeploymentParams, 'forceNew' | 'skipAutoDetectionConfirmation' | 'teamId'>) {
       const query = new URLSearchParams(params as PartialParams).toString();
       return `https://api.vercel.com/v13/deployments${query ? `?${query}` : ''}`;
     },
