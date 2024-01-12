@@ -17,7 +17,8 @@
     "format": "prettier --write . --ignore-path=.prettierignore",
     "dev": "turbo run dev",
     "build": "turbo run build",
-    "deploy:vercel.js": "cd ./packages/horizon.js && pnpm publish --no-git-checks"
+    "deploy:vercel.js:stable": "cd ./packages/vercel.js && pnpm publish --no-git-checks",
+    "deploy:vercel.js:canary": "cd ./packages/vercel.js && pnpm publish --no-git-checks --access public --tag canary"
   },
   "repository": "https://github.com/m1-dev/Vercel.js",
   "homepage": "https://github.com/m1-dev/Vercel.js",
