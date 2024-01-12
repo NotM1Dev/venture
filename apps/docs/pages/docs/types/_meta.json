@@ -1,3 +1,4 @@
 {
-  "ListUserEventParams": "ListUserEventParams"
+  "common": "Common",
+  "user": "User"
 }

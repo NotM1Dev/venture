@@ -1,0 +1,58 @@
+# UserEvent
+
+```typescript
+export interface UserEvent {
+  /**
+   * The unique identifier of the Event.s
+   */
+  id: string;
+
+  /**
+   * The human-readable text of the Event.
+   */
+  text: string;
+
+  /**
+   * A list of "entities" within the event `text`.
+   * Useful for enhancing the displayed text with
+   * additional styling and links.
+   */
+  entities: {
+    /**
+     * The type of entity.
+     */
+    type: UserEventEntityType;
+
+    /**
+     * The index of where the entity begins within the `text` (inclusive).
+     */
+    start: number;
+
+    /**
+     * The index of where the entity ends within the `text` (non-inclusive).
+     */
+    end: number;
+  }[];
+
+  /**
+   * Timestamp (in milliseconds) of when the event was generated.
+   */
+  createdAt: number;
+
+  /**
+   * Metadata for the User who generated the event.
+   */
+  user?: {
+    avatar: string;
+    email: string;
+    slug?: string;
+    uid: string;
+    username: string;
+  };
+
+  /**
+   * The unique identifier of the User who generated the event.
+   */
+  userId: string;
+}
+```
