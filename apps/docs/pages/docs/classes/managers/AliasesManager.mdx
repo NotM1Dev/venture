@@ -1,0 +1,46 @@
+# AliasesManager
+
+```typescript
+export class AliasesManager extends BaseManager {}
+```
+
+## Methods
+
+### `assign(props)`
+
+Creates a new alias for the deployment with the given deployment ID. The authenticated user or team must own this deployment. If the desired alias is already assigned to another deployment, then it will be removed from the old deployment and assigned to the new one. [API Reference](https://vercel.com/docs/rest-api/endpoints#assign-an-alias)
+
+#### `props`
+
+- Type: [AssignAliasProps](/docs/types/aliases/AssignAliasProps)
+- Required: `true`
+
+#### Return Type
+
+[`Promise<AssignAliasReturnType>`](/docs/types/aliases/AssignAliasReturnType)
+
+### `delete(props)`
+
+Delete an Alias with the specified ID. [API Reference](https://vercel.com/docs/rest-api/endpoints#delete-an-alias)
+
+#### `props`
+
+- Type: [`DeleteAliasProps`](/docs/types/aliases/DeleteAliasProps)
+- Required: `true`
+
+#### Return Type
+
+[`Promise<DeleteAliasReturnType>`](/docs/types/aliases/DeleteAliasReturnType)
+
+### `get(props)`
+
+Retrieves an Alias for the given host name or alias ID. [API Reference](https://vercel.com/docs/rest-api/endpoints#get-an-alias)
+
+#### `props`
+
+- Type: [GetAliasProps](/docs/types/aliases/GetAliasProps)
+- Required: `true`
+
+#### Return Type
+
+[`Promise<GetAliasReturnType>`](/docs/types/aliases/GetAliasReturnType)
