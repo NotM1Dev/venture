@@ -1,3 +1,21 @@
 {
-  "UserEvent": "UserEvent"
+  "ACLAction": "ACLAction",
+  "ChecksConclusion": "ChecksConclusion",
+  "ChecksState": "ChecksState",
+  "DeploymentState": "DeploymentState",
+  "DeploymentSubstate": "DeploymentSubstate",
+  "EdgeConfigItem": "EdgeConfigItem",
+  "EdgeConfigItemValue": "EdgeConfigItemValue",
+  "EdgeConfigToken": "EdgeConfigToken",
+  "FileTree": "FileTree",
+  "Framework": "Framework",
+  "Func": "Func",
+  "JobStatus": "JobStatus",
+  "NodeVersion": "NodeVersion",
+  "Pagination": "Pagination",
+  "Plan": "Plan",
+  "SoftBlockedDueToOverageType": "SoftBlockedDueToOverageType",
+  "SoftBlockReason": "SoftBlockReason",
+  "UserEvent": "UserEvent",
+  "UserEventEntityType": "UserEventEntityType"
 }

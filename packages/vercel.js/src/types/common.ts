@@ -6,6 +6,7 @@ export type ACLAction = 'create' | 'delete' | 'read' | 'update' | 'list';
 
 /**
  * Represents a function with a return type, T.
+ * @deprecated
  */
 export type Func<T> = (...args: any[]) => T;
 
@@ -147,7 +148,7 @@ export type UserEventEntityType =
 
 export interface UserEvent {
   /**
-   * The unique identifier of the Event.s
+   * The unique identifier of the Event.
    */
   id: string;
 
