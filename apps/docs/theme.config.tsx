@@ -1,8 +1,19 @@
 import type { DocsThemeConfig } from 'nextra-theme-docs';
 import React from 'react';
+import Image from 'next/image';
+
+const thumbnailSrc =
+  'https://jvk6hm88bttdy90i.public.blob.vercel-storage.com/Venture%20Thumbnail%20Transparent-ulTDs1NTztIA9wiL2CM5XinqnUDKdQ.png';
+
+const iconSrc =
+  'https://jvk6hm88bttdy90i.public.blob.vercel-storage.com/Venture%20Icon%20Transparent-qRRDBSbtha7jdnVVohNevqQEJD2Yvv.png';
 
 function Logo() {
-  return <strong className="font-bold">venture.js</strong>;
+  return (
+    <>
+      <Image src={iconSrc} alt="venture.js" width="50" height="50" />
+    </>
+  );
 }
 
 function Head() {
