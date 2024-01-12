@@ -2,6 +2,7 @@ import type { SoftBlockReason, SoftBlockedDueToOverageType, UserEvent } from '..
 
 export interface AuthUser {
   createdAt: number;
+
   /**
    * When the User account has been "soft blocked", this property will contain
    * the date when the restriction was enacted, and the identifier for why.
