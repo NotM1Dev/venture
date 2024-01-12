@@ -1,6 +1,7 @@
 {
   "aliases": "Aliases",
   "common": "Common",
+  "deployments": "Deployments",
   "team": "Team",
   "user": "User"
 }

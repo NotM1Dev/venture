@@ -20,7 +20,7 @@ export class AliasesManager extends BaseManager {
    * then it will be removed from the old deployment and assigned to the new one.
    * @see https://vercel.com/docs/rest-api/endpoints#assign-an-alias
    */
-  public async assign(props: AssignAliasProps) {
+  public async assign(props: AssignAliasProps): Promise<AssignAliasReturnType> {
     const alias = await axios.post(
       Routes.ALIASES.ASSIGN(props),
       {
@@ -37,7 +37,7 @@ export class AliasesManager extends BaseManager {
       }
     );
 
-    return alias.data as AssignAliasReturnType;
+    return alias.data;
   }
 
   /**

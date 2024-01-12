@@ -79,7 +79,7 @@ export interface ListDeploymentsProps {
   users?: string[];
 }
 
-export interface DeploymentReturnType {
+export interface ListDeploymentsReturnType {
   deployments: {
     uid: string;
 

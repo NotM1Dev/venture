@@ -1,0 +1,79 @@
+# ListDeploymentsProps
+
+```typescript
+export interface ListDeploymentsProps {
+  /**
+   * Name of the deployment.
+   * @example docs
+   */
+  app?: string;
+
+  /**
+   * Gets the deployment created after this Date timestamp. (default: current time)
+   * @example 1612948664566
+   * @deprecated
+   */
+  from?: number;
+
+  /**
+   * Maximum number of deployments to list from a request.
+   * @example 10
+   */
+  limit?: number;
+
+  /**
+   * Filter deployments from the given `projectId`.
+   * @example QmXGTs7mvAMMC7WW5ebrM33qKG32QK3h4vmQMjmY
+   */
+  projectId?: string;
+
+  /**
+   * Filter deployments based on their rollback candidacy
+   */
+  rollbackCandidate?: boolean;
+
+  /**
+   * Get Deployments created after this JavaScript timestamp.
+   * @example 1540095775941
+   */
+  since?: number;
+
+  /**
+   * Filter deployments based on their state (`BUILDING`, `ERROR`, `INITIALIZING`, `QUEUED`, `READY`, `CANCELED`)
+   */
+  state?: DeploymentState[];
+
+  /**
+   * Filter deployments based on the environment.
+   * @example production
+   */
+  target?: 'production' | 'preview';
+
+  /**
+   * The Team identifier or slug to perform the request on behalf of.
+   */
+  teamId?: string;
+
+  /**
+   * Gets the deployment created before this Date timestamp. (default: current time)
+   * @example 1612948664566
+   * @deprecated
+   */
+  to?: number;
+
+  /**
+   * Get Deployments created before this JavaScript timestamp.
+   * @example 1540095775951
+   */
+  until?: number;
+
+  /**
+   * Filter out deployments based on users who have created the deployment.
+   */
+  users?: string[];
+}
+```
+
+## References
+
+- [DeploymentState](/docs/types/common/DeploymentState)

@@ -1,7 +1,7 @@
 import { BaseManager } from './Base';
 import type {
   ListDeploymentsProps,
-  DeploymentReturnType,
+  ListDeploymentsReturnType,
   CreateDeploymentProps,
   CreateDeploymentReturnType
 } from '../../types';
@@ -32,7 +32,7 @@ export class DeploymentsManager extends BaseManager {
    * If a deployment hasn't finished uploading (is incomplete), the `url` property will have a value of `null`.
    * @see https://vercel.com/docs/rest-api/endpoints#list-deployments
    */
-  public async list(props?: ListDeploymentsProps): Promise<DeploymentReturnType> {
+  public async list(props?: ListDeploymentsProps): Promise<ListDeploymentsReturnType> {
     const deployments = await axios.get(Routes.DEPLOYMENTS.LIST(props), {
       headers: {
         Authorization: this.client.token

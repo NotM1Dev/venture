@@ -1,4 +1,9 @@
 {
   "index": "Home",
-  "types": "Types"
+  "types": {
+    "title": "Types",
+    "theme": {
+      "collapsed": true
+    }
+  }
 }
