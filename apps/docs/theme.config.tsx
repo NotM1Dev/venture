@@ -25,6 +25,11 @@ export default {
   chat: {
     link: 'https://discord.com/invite/amK8sjpp5M'
   },
+  useNextSeoProps() {
+    return {
+      titleTemplate: 'Vercel.js'
+    };
+  },
   docsRepositoryBase: 'https://github.com/m1-dev/Vercel.js/tree/main/apps/docs',
   footer: {
     text: 'Built with Nextra by M1.'

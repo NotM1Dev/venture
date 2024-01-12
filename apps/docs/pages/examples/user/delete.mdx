@@ -1,0 +1,20 @@
+# Delete the current user
+
+Initiates the deletion process for the currently authenticated User, by sending a deletion confirmation email. The email contains a link that the user needs to visit in order to proceed with the deletion process. [API Reference](https://vercel.com/docs/rest-api/endpoints#delete-user-account)
+
+## Example
+
+```js
+const vercel = new VercelClient('TOKEN');
+
+// Delete the user
+await vercel.user.delete();
+```
+
+## Usage
+
+- This method accepts no parameters.
+
+## Return Value
+
+- `Promise<void>`

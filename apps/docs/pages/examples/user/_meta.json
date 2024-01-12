@@ -1,0 +1,5 @@
+{
+  "get": "Get User",
+  "delete": "Delete User",
+  "list-events": "List User Events"
+}

@@ -1,0 +1,21 @@
+# Get the current user
+
+Retrieves information related to the currently authenticated User.
+[API Reference](https://vercel.com/docs/rest-api/endpoints#get-the-user)
+
+## Example
+
+```js
+const vercel = new VercelClient('TOKEN');
+
+// Get the user
+const user = await vercel.user.getCurrent();
+```
+
+## Usage
+
+- This method accepts no parameters.
+
+## Return Value
+
+- `Promise<void>`
