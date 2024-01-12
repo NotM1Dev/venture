@@ -1,7 +1,7 @@
 <div align="center">
   <a href="https://github.com/m1-dev/venture">
     <img
-      src="https://jvk6hm88bttdy90i.public.blob.vercel-storage.com/venture-thumb-transparent-nUxsOx38taPQJVijJMUyDASzGxyzKA"
+      src="https://jvk6hm88bttdy90i.public.blob.vercel-storage.com/Venture%20Thumbnail%20Transparent-ulTDs1NTztIA9wiL2CM5XinqnUDKdQ.png"
       width="550" 
     />
   </a>
