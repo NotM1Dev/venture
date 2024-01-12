@@ -1,5 +1,13 @@
 {
-  "ListTeamProps": "ListTeamProps",
+  "AnyTeam": "AnyTeam",
+  "CreateTeamProps": "CreateTeamProps",
+  "DeleteTeamProps": "DeleteTeamProps",
+  "DeleteTeamReturnType": "DeleteTeamReturnType",
+  "GetTeamProps": "GetTeamProps",
+  "GetTeamReturnType": "GetTeamReturnType",
+  "ListTeamsProps": "ListTeamsProps",
+  "ListTeamReturnType": "ListTeamReturnType",
   "Team": "Team",
-  "TeamLimited": "TeamLimited"
+  "TeamLimited": "TeamLimited",
+  "ValidGetTeamProps": "ValidGetTeamProps"
 }
