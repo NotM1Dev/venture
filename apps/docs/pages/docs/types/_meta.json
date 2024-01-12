@@ -1,22 +1,17 @@
 {
   "aliases": {
-    "title": "Aliases",
-    "collapsed": true
+    "title": "Aliases"
   },
   "common": {
-    "title": "Common",
-    "collapsed": true
+    "title": "Common"
   },
   "deployments": {
-    "title": "Deployments",
-    "collapsed": true
+    "title": "Deployments"
   },
   "team": {
-    "title": "Team",
-    "collapsed": true
+    "title": "Team"
   },
   "user": {
-    "title": "User",
-    "collapsed": true
+    "title": "User"
   }
 }

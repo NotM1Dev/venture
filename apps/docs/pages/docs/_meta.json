@@ -1,7 +1,4 @@
 {
   "index": "Home",
-  "types": {
-    "title": "Types",
-    "collapsed": false
-  }
+  "types": "Types"
 }
