@@ -32,7 +32,7 @@ jobs:
         run: pnpm lint
 
       - name: 🛠️ Build
-        run: pnpm build
+        run: pnpm build --filter venture.js
 
       - name: 🔢 Update Version
         run: |
