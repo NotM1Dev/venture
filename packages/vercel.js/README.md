@@ -6,30 +6,30 @@
 
   <br />
 
-  <a href="https://npmjs.com/package/vercel.js">
-    <img alt="version" src="https://img.shields.io/npm/v/vercel.js" />
+  <a href="https://npmjs.com/package/venture.js">
+    <img alt="version" src="https://img.shields.io/npm/v/venture.js" />
   </a>
 
 </div>
 
 ## About
 
-Vercel.js is a module for Node.js that allows you to interact with Vercel's API.
+venture.js is a module for Node.js that allows you to interact with Vercel's API.
 
 ## Installation
 
-Use your preferred package manager to install Vercel.js.
+Use your preferred package manager to install venture.js.
 
 ```sh
-npm install vercel.js
-pnpm add vercel.js
-yarn add vercel.js
+npm install venture.js
+pnpm add venture.js
+yarn add venture.js
 ```
 
 ## Example
 
 ```js
-import { VercelClient } from 'vercel.js';
+import { VercelClient } from 'venture.js';
 
 // Obtain a Vercel token:
 // https://vercel.com/account/tokens

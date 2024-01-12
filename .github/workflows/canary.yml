@@ -5,7 +5,7 @@ on:
     branches:
       - main
     paths:
-      - 'packages/vercel.js/**'
+      - 'packages/venture.js/**'
 
 jobs:
   release:
@@ -36,7 +36,7 @@ jobs:
 
       - name: 🔢 Update Version
         run: |
-          cd packages/vercel.js
+          cd packages/venture.js
           node -e "const pkg = require('./package.json'); \
           const newVersion = pkg.version + '-canary.' + new Date().toISOString().replace(/[:\-T]/g, '').substr(0,14); \
           pkg.version = newVersion; \
@@ -45,13 +45,13 @@ jobs:
           DEBIAN_FRONTEND: noninteractive
 
       - name: 🚚 Publish
-        run: pnpm run deploy:vercel.js:canary
+        run: pnpm run deploy:venture.js:canary
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
 
       - name: 🚫 Deprecate Previous Canary Version
         run: |
-          PACKAGE_NAME=$(node -e "console.log(require('./packages/vercel.js/package.json').name);")
+          PACKAGE_NAME=$(node -e "console.log(require('./packages/venture.js/package.json').name);")
           ALL_VERSIONS=$(npm info $PACKAGE_NAME versions -json)
           VERSION_TO_DEPRECATE=$(echo $ALL_VERSIONS | node -e "
               const versions = JSON.parse(require('fs').readFileSync('/dev/stdin', 'utf-8'));

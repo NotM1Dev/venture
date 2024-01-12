@@ -1,7 +1,7 @@
 {
-  "name": "vercel.js-workspace",
+  "name": "venture.js-workspace",
   "version": "0.0.0",
-  "description": "Monorepo for the Vercel.js package.",
+  "description": "Monorepo for the venture.js package.",
   "private": true,
   "prettier": {
     "printWidth": 110,
@@ -16,13 +16,13 @@
     "lint": "prettier --check . --ignore-path=.prettierignore; turbo run lint",
     "format": "prettier --write . --ignore-path=.prettierignore",
     "dev": "turbo run dev",
-    "dev:docs": "turbo run dev --filter 'vercel.js-docs'",
+    "dev:docs": "turbo run dev --filter 'venture.js-docs'",
     "build": "turbo run build",
-    "deploy:vercel.js:stable": "cd ./packages/vercel.js && pnpm publish --no-git-checks",
-    "deploy:vercel.js:canary": "cd ./packages/vercel.js && pnpm publish --no-git-checks --access public --tag canary"
+    "deploy:venture.js:stable": "cd ./packages/venture.js && pnpm publish --no-git-checks",
+    "deploy:venture.js:canary": "cd ./packages/venture.js && pnpm publish --no-git-checks --access public --tag canary"
   },
-  "repository": "https://github.com/m1-dev/Vercel.js",
-  "homepage": "https://github.com/m1-dev/Vercel.js",
+  "repository": "https://github.com/m1-dev/venture.js",
+  "homepage": "https://github.com/m1-dev/venture.js",
   "author": "M1",
   "license": "MIT",
   "type": "commonjs",
