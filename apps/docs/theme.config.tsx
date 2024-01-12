@@ -38,7 +38,7 @@ export default {
       titleTemplate: 'venture.js'
     };
   },
-  docsRepositoryBase: 'https://github.com/m1-dev/venture.js/tree/main/apps/docs',
+  docsRepositoryBase: 'https://github.com/m1-dev/venture/tree/canary/apps/docs',
   footer: {
     text: 'Built with Nextra by M1.'
   }
