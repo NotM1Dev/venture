@@ -19,7 +19,6 @@ function Head() {
 export default {
   head: <Head />,
   logo: <Logo />,
-
   project: {
     link: 'https://github.com/m1-dev/venture.js'
   },
