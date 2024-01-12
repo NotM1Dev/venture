@@ -35,3 +35,7 @@ const venture = new VentureClient('TOKEN');
 // Get the currently logged in user:
 const user = await venture.user.getCurrent();
 ```
+
+# Documentation
+
+Documentation is available at [venture.js.org](https://venture.js.org)
