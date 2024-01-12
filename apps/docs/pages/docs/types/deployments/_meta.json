@@ -1,6 +1,6 @@
 {
   "CreateDeploymentProps": "CreateDeploymentProps",
   "CreateDeploymentReturnType": "CreateDeploymentReturnType",
-  "DeploymentReturnType": "DeploymentReturnType",
-  "ListDeploymentsProps": "ListDeploymentsProps"
+  "ListDeploymentsProps": "ListDeploymentsProps",
+  "ListDeploymentsReturnType": "ListDeploymentsReturnType"
 }
