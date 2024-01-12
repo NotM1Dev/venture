@@ -1,7 +1,7 @@
 {
   "AuthUser": "AuthUser",
   "AuthUserLimited": "AuthUserLimited",
-  "ListUserEventsReturnType": "ListUserEventsReturnType",
   "ListUserEventsProps": "ListUserEventsProps",
+  "ListUserEventsReturnType": "ListUserEventsReturnType",
   "User": "User"
 }
