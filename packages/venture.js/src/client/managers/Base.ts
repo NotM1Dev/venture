@@ -1,4 +1,4 @@
-import type { VentureClient } from '../VentureClient';
+import type { VentureClient } from '..';
 
 export class BaseManager {
   public client: VentureClient;
