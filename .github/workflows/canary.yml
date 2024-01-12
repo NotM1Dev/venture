@@ -3,7 +3,7 @@ name: 🛠️ Canary Build
 on:
   push:
     branches:
-      - main
+      - canary
     paths:
       - 'packages/venture.js/**'
 
