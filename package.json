@@ -15,7 +15,7 @@
   "scripts": {
     "lint": "prettier --check . --ignore-path=.prettierignore; turbo run build",
     "format": "prettier --write . --ignore-path=.prettierignore",
-    "test": "turbo run test",
+    "dev": "turbo run dev",
     "build": "turbo run build",
     "deploy:vercel.js": "cd ./packages/horizon.js && pnpm publish --no-git-checks"
   },

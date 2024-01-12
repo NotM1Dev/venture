@@ -7,7 +7,7 @@
   "types": "./dist/index.d.ts",
   "scripts": {
     "lint": "tsc",
-    "test": "tsx --env-file=./test/.env ./test/index.mts",
+    "dev": "tsx --env-file=./test/.env ./test/index.mts",
     "build": "tsup"
   },
   "files": [

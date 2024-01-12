@@ -1,5 +1,5 @@
 {
-  "extends": "internals/tsconfig.json",
+  "extends": "internals/tsconfig/base.json",
   "compilerOptions": {
     "noEmit": true,
     "outDir": "./dist"

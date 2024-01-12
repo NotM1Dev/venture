@@ -5,7 +5,7 @@
       "cache": false,
       "persistent": false
     },
-    "test": {
+    "dev": {
       "cache": false,
       "persistent": true
     }
