@@ -1,5 +1,6 @@
 {
   "ACLAction": "ACLAction",
+  "AuthToken": "AuthToken",
   "ChecksConclusion": "ChecksConclusion",
   "ChecksState": "ChecksState",
   "DeploymentState": "DeploymentState",
