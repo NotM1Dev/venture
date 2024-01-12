@@ -7,7 +7,7 @@ import type {
   Plan
 } from '../common';
 
-export interface ListDeploymentsParams {
+export interface ListDeploymentsProps {
   /**
    * Name of the deployment.
    * @example docs
@@ -79,7 +79,7 @@ export interface ListDeploymentsParams {
   users?: string[];
 }
 
-export interface DeploymentData {
+export interface DeploymentReturnType {
   deployments: {
     uid: string;
 
@@ -271,7 +271,7 @@ export interface DeploymentData {
   pagination: Pagination;
 }
 
-export interface CreateDeploymentParams {
+export interface CreateDeploymentProps {
   /**
    * Forces a new deployment even if there is a previous similar deployment
    */
@@ -518,7 +518,7 @@ export interface CreateDeploymentParams {
   withLatestCommit?: boolean;
 }
 
-export interface CreateDeploymentData {
+export interface CreateDeploymentReturnType {
   build: {
     /**
      * The keys of the environment variables that were assigned during the build phase.

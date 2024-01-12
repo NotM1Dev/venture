@@ -1,5 +1,5 @@
 import { BaseManager } from './Base';
-import type { ListUserEventsData, ListUserEventsParams, User } from '../../types';
+import type { ListUserEventsReturnType, ListUserEventsProps, User } from '../../types';
 
 import Routes from '../../routes';
 import axios from 'axios';
@@ -40,8 +40,8 @@ export class UserManager extends BaseManager {
    * in relation to the Team that was specified.
    * @see https://vercel.com/docs/rest-api/endpoints#list-user-events
    */
-  public async listEvents(params?: ListUserEventsParams): Promise<ListUserEventsData> {
-    const events = await axios.get(Routes.USER.LIST_EVENTS(params), {
+  public async listEvents(props?: ListUserEventsProps): Promise<ListUserEventsReturnType> {
+    const events = await axios.get(Routes.USER.LIST_EVENTS(props), {
       headers: {
         Authorization: this.client.token
       }

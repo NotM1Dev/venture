@@ -1,6 +1,6 @@
 import type { Pagination } from '../index';
 
-export interface ListTeamsParams {
+export interface ListTeamsProps {
   /**
    * Maximum number of Teams which may be returned.
    * @example 20
@@ -213,12 +213,12 @@ export interface TeamLimited {
 
 export type AnyTeam = Team | TeamLimited;
 
-export interface ListTeamData {
+export interface ListTeamReturnType {
   teams: AnyTeam[];
   pagination: Pagination;
 }
 
-export interface GetTeamParams {
+export interface GetTeamProps {
   slug?: string;
 
   /**
@@ -227,17 +227,17 @@ export interface GetTeamParams {
   teamId?: string;
 }
 
-export type ValidGetTeamParams = { teamId: string } | { slug: string };
+export type ValidGetTeamProps = { teamId: string } | { slug: string };
 
-export type GetTeamReturnType<T extends GetTeamParams> = T extends {}
+export type GetTeamReturnType<T extends GetTeamProps> = T extends {}
   ? T['teamId'] extends string
     ? AnyTeam
     : T['slug'] extends string
       ? AnyTeam
-      : ListTeamData
-  : ListTeamData;
+      : ListTeamReturnType
+  : ListTeamReturnType;
 
-export interface CreateTeamParams {
+export interface CreateTeamProps {
   /**
    * The desired slug for the Team
    * @example a-random-team
@@ -252,7 +252,7 @@ export interface CreateTeamParams {
   name?: string;
 }
 
-export interface DeleteTeamParams {
+export interface DeleteTeamProps {
   /**
    * The Team identifier or slug to perform the request on behalf of.
    */
@@ -280,7 +280,7 @@ export interface DeleteTeamParams {
   }[];
 }
 
-export interface DeleteTeamData {
+export interface DeleteTeamReturnType {
   /**
    * The ID of the deleted Team
    */

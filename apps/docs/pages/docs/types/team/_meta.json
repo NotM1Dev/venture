@@ -1,5 +1,5 @@
 {
-  "ListTeamParams": "ListTeamParams",
+  "ListTeamProps": "ListTeamProps",
   "Team": "Team",
   "TeamLimited": "TeamLimited"
 }

@@ -1,9 +1,9 @@
 import { BaseManager } from './Base';
 import type {
-  ListDeploymentsParams,
-  DeploymentData,
-  CreateDeploymentParams,
-  CreateDeploymentData
+  ListDeploymentsProps,
+  DeploymentReturnType,
+  CreateDeploymentProps,
+  CreateDeploymentReturnType
 } from '../../types';
 
 import Routes from '../../routes';
@@ -17,8 +17,8 @@ export class DeploymentsManager extends BaseManager {
    * can be specified to redeploy a previous deployment.
    * @see https://vercel.com/docs/rest-api/endpoints#create-a-new-deployment
    */
-  public async create(params: CreateDeploymentParams): Promise<CreateDeploymentData> {
-    const deployment = await axios.post(Routes.DEPLOYMENTS.CREATE(params), params, {
+  public async create(props: CreateDeploymentProps): Promise<CreateDeploymentReturnType> {
+    const deployment = await axios.post(Routes.DEPLOYMENTS.CREATE(props), props, {
       headers: {
         Authorization: this.client.token
       }
@@ -32,8 +32,8 @@ export class DeploymentsManager extends BaseManager {
    * If a deployment hasn't finished uploading (is incomplete), the `url` property will have a value of `null`.
    * @see https://vercel.com/docs/rest-api/endpoints#list-deployments
    */
-  public async list(params?: ListDeploymentsParams): Promise<DeploymentData> {
-    const deployments = await axios.get(Routes.DEPLOYMENTS.LIST(params), {
+  public async list(props?: ListDeploymentsProps): Promise<DeploymentReturnType> {
+    const deployments = await axios.get(Routes.DEPLOYMENTS.LIST(props), {
       headers: {
         Authorization: this.client.token
       }

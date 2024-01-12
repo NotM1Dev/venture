@@ -1,4 +1,4 @@
-export interface AssignAliasParams {
+export interface AssignAliasProps {
   /**
    * The ID of the deployment the aliases should be listed for
    * @example dpl_FjvFJncQHQcZMznrUm9EoB8sFuPa
@@ -24,7 +24,7 @@ export interface AssignAliasParams {
   redirect?: string | null;
 }
 
-export interface AssignAliasData {
+export interface AssignAliasReturnType {
   /**
    * The unique identifier of the alias
    */
@@ -47,7 +47,7 @@ export interface AssignAliasData {
   oldDeploymentId?: string | null;
 }
 
-export interface DeleteAliasParams {
+export interface DeleteAliasProps {
   /**
    * The ID or alias that will be removed
    * @example 2WjyKQmM8ZnGcJsPWMrHRHrE
@@ -60,11 +60,11 @@ export interface DeleteAliasParams {
   teamId?: string;
 }
 
-export interface DeleteAliasData {
+export interface DeleteAliasReturnType {
   status: 'SUCCESS';
 }
 
-export interface GetAliasParams {
+export interface GetAliasProps {
   /**
    * The alias or alias ID to be retrieved
    * @example example.vercel.app
@@ -102,7 +102,7 @@ export interface GetAliasParams {
   until?: number;
 }
 
-export interface GetAliasData {
+export interface GetAliasReturnType {
   /**
    * The alias name, it could be a `.vercel.app` subdomain or a custom domain
    */

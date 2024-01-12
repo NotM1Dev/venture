@@ -1,4 +1,4 @@
-export interface DomainAvailableParams {
+export interface DomainAvailableProps {
   /**
    * The name of the domain for which we would like to check the status.
    * @example example.com
@@ -11,11 +11,11 @@ export interface DomainAvailableParams {
   teamId?: string;
 }
 
-export interface DomainAvailableData {
+export interface DomainAvailableReturnType {
   available: boolean;
 }
 
-export interface DomainPriceParams {
+export interface DomainPriceProps {
   /**
    * The name of the domain for which the price needs to be checked.
    * @example example.com
@@ -34,7 +34,7 @@ export interface DomainPriceParams {
   type?: 'new' | 'renewal';
 }
 
-export interface DomainPriceData {
+export interface DomainPriceReturnType {
   /**
    * The domain price in USD.
    */

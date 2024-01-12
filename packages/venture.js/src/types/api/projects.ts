@@ -49,7 +49,7 @@ export interface CreateProjectGitRepository {
   type: 'github' | 'gitlab' | 'bitbucket';
 }
 
-export interface CreateProjectParams {
+export interface CreateProjectProps {
   /**
    * The desired name for the project
    */
@@ -129,7 +129,7 @@ export interface CreateProjectParams {
   skipGitConnectDuringLink?: boolean;
 }
 
-export interface CreateProjectData {
+export interface CreateProjectReturnType {
   accountId: string;
   analytics?: {
     id: string;
@@ -664,7 +664,7 @@ export interface CreateProjectData {
   concurrencyBucketName?: string;
 }
 
-export interface DeleteProjectParams {
+export interface DeleteProjectProps {
   /**
    * The unique project identifier or the project name
    * @example prj_12HKQaOmR5t5Uy6vdcQsNIiZgHGB
@@ -677,4 +677,4 @@ export interface DeleteProjectParams {
   teamId?: string;
 }
 
-export interface DeleteProjectData {}
+export interface DeleteProjectReturnType {}

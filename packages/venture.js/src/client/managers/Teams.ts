@@ -1,12 +1,12 @@
 import type {
-  ListTeamsParams,
-  ListTeamData,
-  GetTeamParams,
-  ValidGetTeamParams,
+  ListTeamsProps,
+  ListTeamReturnType,
+  GetTeamProps,
+  ValidGetTeamProps,
   AnyTeam,
-  CreateTeamParams,
-  DeleteTeamParams,
-  DeleteTeamData,
+  CreateTeamProps,
+  DeleteTeamProps,
+  DeleteTeamReturnType,
   GetTeamReturnType
 } from '../../types/api/team';
 
@@ -19,12 +19,12 @@ export class TeamsManager extends BaseManager {
   /**
    * Get information for the Team specified by the `teamId` parameter.
    */
-  public async get(params: { teamId: string } & GetTeamParams): Promise<AnyTeam>;
-  public async get(params: { slug: string } & GetTeamParams): Promise<AnyTeam>;
-  public async get(params?: ValidGetTeamParams): Promise<ListTeamData>;
+  public async get(props: { teamId: string } & GetTeamProps): Promise<AnyTeam>;
+  public async get(props: { slug: string } & GetTeamProps): Promise<AnyTeam>;
+  public async get(props?: ValidGetTeamProps): Promise<ListTeamReturnType>;
 
-  public async get<T extends ValidGetTeamParams>(params?: T): Promise<GetTeamReturnType<T>> {
-    const team = await axios.get(Routes.TEAMS.GET(params), {
+  public async get<T extends ValidGetTeamProps>(props?: T): Promise<GetTeamReturnType<T>> {
+    const team = await axios.get(Routes.TEAMS.GET(props), {
       headers: {
         Authorization: this.client.token
       }
@@ -36,8 +36,8 @@ export class TeamsManager extends BaseManager {
   /**
    * Get a paginated list of all the Teams the authenticated User is a member of.
    */
-  public async list(params?: ListTeamsParams): Promise<ListTeamData> {
-    const teams = await axios.get(Routes.TEAMS.LIST(params), {
+  public async list(props?: ListTeamsProps): Promise<ListTeamReturnType> {
+    const teams = await axios.get(Routes.TEAMS.LIST(props), {
       headers: {
         Authorization: this.client.token
       }
@@ -50,8 +50,8 @@ export class TeamsManager extends BaseManager {
    * Create a new Team under your account.
    * You need to provide the desired Team slug, and optionally the Team name.
    */
-  public async create(params: CreateTeamParams) {
-    const team = await axios.post(Routes.TEAMS.CREATE(), params, {
+  public async create(props: CreateTeamProps) {
+    const team = await axios.post(Routes.TEAMS.CREATE(), props, {
       headers: {
         Authorization: this.client.token
       }
@@ -64,13 +64,13 @@ export class TeamsManager extends BaseManager {
    * Delete a team under your account. You need to provide the desired team `id`.
    * An optional array of reasons for deletion may also be sent.
    */
-  public async delete(params: DeleteTeamParams): Promise<DeleteTeamData> {
-    const team = await axios.delete(Routes.TEAMS.DELETE(params), {
+  public async delete(props: DeleteTeamProps): Promise<DeleteTeamReturnType> {
+    const team = await axios.delete(Routes.TEAMS.DELETE(props), {
       headers: {
         Authorization: this.client.token
       },
       data: {
-        reasons: params.reasons
+        reasons: props.reasons
       }
     });
 

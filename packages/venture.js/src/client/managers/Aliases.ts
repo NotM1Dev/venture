@@ -1,16 +1,16 @@
 import type {
-  AssignAliasParams,
-  AssignAliasData,
-  DeleteAliasParams,
-  DeleteAliasData,
-  GetAliasParams,
-  GetAliasData
+  AssignAliasProps,
+  AssignAliasReturnType,
+  DeleteAliasProps,
+  DeleteAliasReturnType,
+  GetAliasProps,
+  GetAliasReturnType
 } from '../../index';
 
 import { BaseManager } from './Base';
 
 import Routes from '../../routes';
-import axios, { type AxiosRequestConfig } from 'axios';
+import axios from 'axios';
 
 export class AliasesManager extends BaseManager {
   /**
@@ -20,32 +20,32 @@ export class AliasesManager extends BaseManager {
    * then it will be removed from the old deployment and assigned to the new one.
    * @see https://vercel.com/docs/rest-api/endpoints#assign-an-alias
    */
-  public async assign(params: AssignAliasParams) {
+  public async assign(props: AssignAliasProps) {
     const alias = await axios.post(
-      Routes.ALIASES.ASSIGN(params),
+      Routes.ALIASES.ASSIGN(props),
       {
-        alias: params.alias,
-        redirect: params.redirect
+        alias: props.alias,
+        redirect: props.redirect
       },
       {
         headers: {
           Authorization: this.client.token
         },
         params: {
-          teamId: params.teamId
+          teamId: props.teamId
         }
       }
     );
 
-    return alias.data as AssignAliasData;
+    return alias.data as AssignAliasReturnType;
   }
 
   /**
    * Delete an Alias with the specified ID.
    * @see https://vercel.com/docs/rest-api/endpoints#delete-an-alias
    */
-  public async delete(params: DeleteAliasParams): Promise<DeleteAliasData> {
-    const alias = await axios.delete(Routes.ALIASES.DELETE(params), {
+  public async delete(props: DeleteAliasProps): Promise<DeleteAliasReturnType> {
+    const alias = await axios.delete(Routes.ALIASES.DELETE(props), {
       headers: {
         Authorization: this.client.token
       }
@@ -58,8 +58,8 @@ export class AliasesManager extends BaseManager {
    * Retrieves an Alias for the given host name or alias ID.
    * @see https://vercel.com/docs/rest-api/endpoints#get-an-alias
    */
-  public async get(params: GetAliasParams): Promise<GetAliasData> {
-    const alias = await axios.get(Routes.ALIASES.GET(params), {
+  public async get(props: GetAliasProps): Promise<GetAliasReturnType> {
+    const alias = await axios.get(Routes.ALIASES.GET(props), {
       headers: {
         Authorization: this.client.token
       }

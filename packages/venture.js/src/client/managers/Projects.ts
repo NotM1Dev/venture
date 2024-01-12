@@ -1,8 +1,8 @@
 import type {
-  CreateProjectData,
-  CreateProjectParams,
-  DeleteProjectData,
-  DeleteProjectParams
+  CreateProjectReturnType,
+  CreateProjectProps,
+  DeleteProjectReturnType,
+  DeleteProjectProps
 } from '../../index';
 import { BaseManager } from './Base';
 
@@ -16,11 +16,11 @@ export class ProjectsManager extends BaseManager {
    * be provided to override the defaults.
    * @see https://vercel.com/docs/rest-api/endpoints#create-a-new-project
    */
-  public async create(params: CreateProjectParams): Promise<CreateProjectData> {
+  public async create(props: CreateProjectProps): Promise<CreateProjectReturnType> {
     const project = await axios.post(
-      Routes.PROJECTS.CREATE(params),
+      Routes.PROJECTS.CREATE(props),
       {
-        ...params,
+        ...props,
         teamId: undefined
       },
       {
@@ -38,8 +38,8 @@ export class ProjectsManager extends BaseManager {
    * either the project id or name.
    * @see https://vercel.com/docs/rest-api/endpoints#delete-a-project
    */
-  public async delete(params: DeleteProjectParams): Promise<DeleteProjectData> {
-    const data = await axios.delete(Routes.PROJECTS.DELETE(params), {
+  public async delete(props: DeleteProjectProps): Promise<DeleteProjectReturnType> {
+    const data = await axios.delete(Routes.PROJECTS.DELETE(props), {
       headers: {
         Authorization: this.client.token
       }

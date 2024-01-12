@@ -1,7 +1,7 @@
 {
   "AuthUser": "AuthUser",
   "AuthUserLimited": "AuthUserLimited",
-  "ListUserEventsData": "ListUserEventsData",
-  "ListUserEventsParams": "ListUserEventsParams",
+  "ListUserEventsReturnType": "ListUserEventsReturnType",
+  "ListUserEventsProps": "ListUserEventsProps",
   "User": "User"
 }
