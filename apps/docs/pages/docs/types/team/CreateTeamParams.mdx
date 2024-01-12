@@ -1,0 +1,18 @@
+# CreateTeamParams
+
+```typescript
+export interface CreateTeamParams {
+  /**
+   * The desired slug for the Team
+   * @example a-random-team
+   */
+  slug: string;
+
+  /**
+   * The desired name for the Team.
+   * It will be generated from the provided slug if nothing is provided
+   * @example A Random Team
+   */
+  name?: string;
+}
+```

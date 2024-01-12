@@ -1,0 +1,23 @@
+# ListTeamsParams
+
+```typescript
+export interface ListTeamsParams {
+  /**
+   * Maximum number of Teams which may be returned.
+   * @example 20
+   */
+  limit?: number;
+
+  /**
+   * Timestamp (in milliseconds) to only include Teams created since then.
+   * @example 1540095775951
+   */
+  since?: number;
+
+  /**
+   * Timestamp (in milliseconds) to only include Teams created until then.
+   * @example 1540095775951
+   */
+  until?: number;
+}
+```

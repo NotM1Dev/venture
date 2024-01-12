@@ -1,0 +1,16 @@
+# DeleteTeamData
+
+```typescript
+export interface DeleteTeamData {
+  /**
+   * The ID of the deleted Team
+   */
+  id: string;
+
+  /**
+   * Signifies whether the default team update has failed,
+   * when newDefaultTeamId is provided in request query.
+   */
+  newDefaultTeamIdError?: boolean;
+}
+```

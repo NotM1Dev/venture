@@ -1,35 +1,8 @@
-import type { Pagination } from '../index';
+# TeamLimited
 
-export interface ListTeamsParams {
-  /**
-   * Maximum number of Teams which may be returned.
-   * @example 20
-   */
-  limit?: number;
+A limited form of data representing a Team, due to the authentication token missing privileges to read the full Team data.
 
-  /**
-   * Timestamp (in milliseconds) to only include Teams created since then.
-   * @example 1540095775951
-   */
-  since?: number;
-
-  /**
-   * Timestamp (in milliseconds) to only include Teams created until then.
-   * @example 1540095775951
-   */
-  until?: number;
-}
-
-/**
- * Data representing a Team.
- */
-export interface Team {
-  [key: string]: unknown;
-}
-
-/**
- * A limited form of data representing a Team, due to the authentication token missing privileges to read the full Team data.
- */
+```typescript
 export interface TeamLimited {
   /**
    * Property indicating that this Team data contains only limited information,
@@ -210,85 +183,4 @@ export interface TeamLimited {
    */
   createdAt: number;
 }
-
-export type AnyTeam = Team | TeamLimited;
-
-export interface ListTeamData {
-  teams: AnyTeam[];
-  pagination: Pagination;
-}
-
-export interface GetTeamParams {
-  slug?: string;
-
-  /**
-   * The Team identifier or slug to perform the request on behalf of.
-   */
-  teamId?: string;
-}
-
-export type ValidGetTeamParams = { teamId: string } | { slug: string };
-
-export type GetTeamReturnType<T extends GetTeamParams> = T extends {}
-  ? T['teamId'] extends string
-    ? AnyTeam
-    : T['slug'] extends string
-      ? AnyTeam
-      : ListTeamData
-  : ListTeamData;
-
-export interface CreateTeamParams {
-  /**
-   * The desired slug for the Team
-   * @example a-random-team
-   */
-  slug: string;
-
-  /**
-   * The desired name for the Team.
-   * It will be generated from the provided slug if nothing is provided
-   * @example A Random Team
-   */
-  name?: string;
-}
-
-export interface DeleteTeamParams {
-  /**
-   * The Team identifier or slug to perform the request on behalf of.
-   */
-  teamId: string;
-
-  /**
-   * Id of the team to be set as the new default team
-   * @example team_LLHUOMOoDlqOp8wPE4kFo9pE
-   */
-  newDefaultTeamId?: string;
-
-  /**
-   * Optional array of objects that describe the reason why the team is being deleted.
-   */
-  reasons?: {
-    /**
-     * Description of the reason why the team is being deleted.
-     */
-    description: string;
-
-    /**
-     * Idenitifier slug of the reason why the team is being deleted.
-     */
-    slug: string;
-  }[];
-}
-
-export interface DeleteTeamData {
-  /**
-   * The ID of the deleted Team
-   */
-  id: string;
-
-  /**
-   * Signifies whether the default team update has failed,
-   * when newDefaultTeamId is provided in request query.
-   */
-  newDefaultTeamIdError?: boolean;
-}
+```

@@ -1,0 +1,16 @@
+# GetTeamReturnType
+
+```typescript
+export type GetTeamReturnType<T extends GetTeamParams> = T extends {}
+  ? T['teamId'] extends string
+    ? AnyTeam
+    : T['slug'] extends string
+      ? AnyTeam
+      : ListTeamData
+  : ListTeamData;
+```
+
+## References
+
+- [ListTeamData](/docs/types/team/ListTeamData)
+- [GetTeamParams](/docs/types/team/GetTeamParams)
