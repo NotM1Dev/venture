@@ -35,9 +35,9 @@ const Routes = {
         throw new Error('Alias ID must be provided');
       }
 
-      const withTeamId = `?teamId=${params.teamId}`;
-
-      return `https://api.vercel.com/v2/aliases/${params.aliasId}/${params.teamId ? withTeamId : ''}`;
+      return `https://api.vercel.com/v2/aliases/${params.aliasId}/${params.teamId || ''}${
+        params.teamId ? `?teamId=${params.teamId}` : ''
+      }`;
     },
 
     GET(params: GetAliasParams) {
@@ -46,19 +46,19 @@ const Routes = {
       }
 
       const query = new URLSearchParams(params as PartialParams).toString();
-      return `https://api.vercel.com/v4/aliases/${params.idOrAlias}${query ? `?${query}` : ''}`;
+      return `https://api.vercel.com/v4/aliases/${params.idOrAlias}${query && `?${query}`}`;
     }
   },
 
   DEPLOYMENTS: {
     CREATE(params: Pick<CreateDeploymentParams, 'forceNew' | 'skipAutoDetectionConfirmation' | 'teamId'>) {
       const query = new URLSearchParams(params as PartialParams).toString();
-      return `https://api.vercel.com/v13/deployments${query ? `?${query}` : ''}`;
+      return `https://api.vercel.com/v13/deployments${query && `?${query}`}`;
     },
 
     LIST(params?: ListDeploymentsParams) {
       const query = new URLSearchParams(params as PartialParams).toString();
-      return `https://api.vercel.com/v6/deployments${query ? `?${query}` : ''}`;
+      return `https://api.vercel.com/v6/deployments${query && `?${query}`}`;
     }
   },
 
@@ -69,7 +69,7 @@ const Routes = {
       }
 
       const query = new URLSearchParams(params as PartialParams).toString();
-      return `https://api.vercel.com/v4/domains/status?${query}`;
+      return `https://api.vercel.com/v4/domains/status${query && `?${query}`}`;
     },
 
     PRICE(params: DomainPriceParams) {
@@ -78,7 +78,7 @@ const Routes = {
       }
 
       const query = new URLSearchParams(params as PartialParams).toString();
-      return `https://api.vercel.com/v4/domains/price?${query}`;
+      return `https://api.vercel.com/v4/domains/price${query && `?${query}`}`;
     }
   },
 
@@ -127,7 +127,7 @@ const Routes = {
 
     LIST(params?: ListTeamsParams) {
       const query = new URLSearchParams(params as PartialParams).toString();
-      return `https://api.vercel.com/v2/teams${query ? `?${query}` : ''}`;
+      return `https://api.vercel.com/v2/teams${query && `?${query}`}`;
     }
   },
 
@@ -142,7 +142,7 @@ const Routes = {
 
     LIST_EVENTS(params?: ListUserEventsParams) {
       const query = new URLSearchParams(params as PartialParams).toString();
-      return `https://api.vercel.com/v3/events${query ? `?${query}` : ''}`;
+      return `https://api.vercel.com/v3/events${query && `?${query}`}`;
     }
   }
 };
