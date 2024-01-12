@@ -29,11 +29,11 @@ yarn add venture.js
 ## Example
 
 ```js
-import { VercelClient } from 'venture.js';
+import { VentureClient } from 'venture.js';
 
 // Obtain a Vercel token:
 // https://vercel.com/account/tokens
-const vercel = new VercelClient('TOKEN');
+const vercel = new VentureClient('TOKEN');
 
 // Get the currently logged in user:
 const user = await vercel.user.getCurrent();

@@ -1,9 +1,9 @@
-import type { VercelClient } from '../VercelClient';
+import type { VentureClient } from '../VentureClient';
 
 export class BaseManager {
-  public client: VercelClient;
+  public client: VentureClient;
 
-  public constructor(client: VercelClient) {
+  public constructor(client: VentureClient) {
     if (!client) {
       throw new Error('No Vercel client provided');
     }

@@ -5,7 +5,7 @@ import { ProjectsManager } from './managers/Projects';
 import { TeamsManager } from './managers/Teams';
 import { UserManager } from './managers/User';
 
-export class VercelClient {
+export class VentureClient {
   #token: string;
   #rawToken: string;
 

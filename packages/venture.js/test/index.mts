@@ -1,2 +1,2 @@
-import { VercelClient } from '../dist/index.mjs';
-const client = new VercelClient(process.env.VERCEL_TOKEN!);
+import { VentureClient } from '../dist/index.mjs';
+const client = new VentureClient(process.env.VERCEL_TOKEN!);
