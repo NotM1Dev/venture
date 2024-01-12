@@ -1,16 +1,13 @@
 <div align="center">
-  <img
-    src="https://jvk6hm88bttdy90i.public.blob.vercel-storage.com/vercel-js-wk3MNC1oVXn8N6OaYErDBKAfZue0Pc.png"
-    width="550" 
-  />
-
-  <br />
-
-  <a href="https://npmjs.com/package/venture.js">
-    <img alt="version" src="https://img.shields.io/npm/v/venture.js" />
+  <a href="https://github.com/m1-dev/venture">
+    <img
+      src="https://jvk6hm88bttdy90i.public.blob.vercel-storage.com/venture-thumb-transparent-nUxsOx38taPQJVijJMUyDASzGxyzKA"
+      width="550" 
+    />
   </a>
-
 </div>
+
+<br />
 
 ## About
 
@@ -33,8 +30,8 @@ import { VentureClient } from 'venture.js';
 
 // Obtain a Vercel token:
 // https://vercel.com/account/tokens
-const vercel = new VentureClient('TOKEN');
+const venture = new VentureClient('TOKEN');
 
 // Get the currently logged in user:
-const user = await vercel.user.getCurrent();
+const user = await venture.user.getCurrent();
 ```
