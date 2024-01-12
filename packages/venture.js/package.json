@@ -20,7 +20,7 @@
     "client"
   ],
   "repository": "https://github.com/m1-dev/venture.js",
-  "homepage": "https://github.com/m1-dev/venture.js",
+  "homepage": "https://venture.js.org",
   "author": "M1",
   "license": "MIT",
   "type": "commonjs",
