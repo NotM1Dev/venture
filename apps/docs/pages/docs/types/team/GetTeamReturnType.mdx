@@ -6,11 +6,11 @@ export type GetTeamReturnType<T extends GetTeamProps> = T extends {}
     ? AnyTeam
     : T['slug'] extends string
       ? AnyTeam
-      : ListTeamReturnType
-  : ListTeamReturnType;
+      : ListTeamsReturnType
+  : ListTeamsReturnType;
 ```
 
 ## References
 
-- [ListTeamReturnType](/docs/types/team/ListTeamReturnType)
+- [ListTeamsReturnType](/docs/types/team/ListTeamsReturnType)
 - [GetTeamProps](/docs/types/team/GetTeamProps)

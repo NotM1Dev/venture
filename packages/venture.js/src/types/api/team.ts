@@ -213,7 +213,7 @@ export interface TeamLimited {
 
 export type AnyTeam = Team | TeamLimited;
 
-export interface ListTeamReturnType {
+export interface ListTeamsReturnType {
   teams: AnyTeam[];
   pagination: Pagination;
 }
@@ -234,8 +234,8 @@ export type GetTeamReturnType<T extends GetTeamProps> = T extends {}
     ? AnyTeam
     : T['slug'] extends string
       ? AnyTeam
-      : ListTeamReturnType
-  : ListTeamReturnType;
+      : ListTeamsReturnType
+  : ListTeamsReturnType;
 
 export interface CreateTeamProps {
   /**

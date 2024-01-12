@@ -1,6 +1,6 @@
 import type {
   ListTeamsProps,
-  ListTeamReturnType,
+  ListTeamsReturnType,
   GetTeamProps,
   ValidGetTeamProps,
   AnyTeam,
@@ -21,7 +21,7 @@ export class TeamsManager extends BaseManager {
    */
   public async get(props: { teamId: string } & GetTeamProps): Promise<AnyTeam>;
   public async get(props: { slug: string } & GetTeamProps): Promise<AnyTeam>;
-  public async get(props?: ValidGetTeamProps): Promise<ListTeamReturnType>;
+  public async get(props?: ValidGetTeamProps): Promise<ListTeamsReturnType>;
 
   public async get<T extends ValidGetTeamProps>(props?: T): Promise<GetTeamReturnType<T>> {
     const team = await axios.get(Routes.TEAMS.GET(props), {
@@ -36,7 +36,7 @@ export class TeamsManager extends BaseManager {
   /**
    * Get a paginated list of all the Teams the authenticated User is a member of.
    */
-  public async list(props?: ListTeamsProps): Promise<ListTeamReturnType> {
+  public async list(props?: ListTeamsProps): Promise<ListTeamsReturnType> {
     const teams = await axios.get(Routes.TEAMS.LIST(props), {
       headers: {
         Authorization: this.client.token

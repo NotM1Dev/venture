@@ -6,7 +6,7 @@
   "GetTeamProps": "GetTeamProps",
   "GetTeamReturnType": "GetTeamReturnType",
   "ListTeamsProps": "ListTeamsProps",
-  "ListTeamReturnType": "ListTeamReturnType",
+  "ListTeamsReturnType": "ListTeamsReturnType",
   "Team": "Team",
   "TeamLimited": "TeamLimited",
   "ValidGetTeamProps": "ValidGetTeamProps"
