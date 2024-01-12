@@ -3,4 +3,14 @@ const withNextra = require('nextra')({
   themeConfig: './theme.config.tsx'
 });
 
-module.exports = withNextra();
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  images: {
+    remotePatterns: [
+      { hostname: '**', protocol: 'https' },
+      { hostname: '**', protocol: 'http' }
+    ]
+  }
+};
+
+module.exports = withNextra(nextConfig);
