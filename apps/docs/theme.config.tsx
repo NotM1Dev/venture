@@ -22,9 +22,6 @@ export default {
   project: {
     link: 'https://github.com/m1-dev/Vercel.js'
   },
-  chat: {
-    link: 'https://discord.com/invite/amK8sjpp5M'
-  },
   useNextSeoProps() {
     return {
       titleTemplate: 'Vercel.js'
