@@ -1,0 +1,26 @@
+# AssignAliasData
+
+```typescript
+export interface AssignAliasData {
+  /**
+   * The unique identifier of the alias
+   */
+  uid: string;
+
+  /**
+   * The assigned alias name
+   */
+  alias: string;
+
+  /**
+   * The date when the alias was created
+   */
+  created: string;
+
+  /**
+   * The unique identifier of the previously aliased deployment,
+   * only received when the alias was used before
+   */
+  oldDeploymentId?: string | null;
+}
+```

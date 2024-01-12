@@ -1,0 +1,8 @@
+{
+  "AssignAliasParams": "AssignAliasParams",
+  "AssignAliasData": "AssignAliasData",
+  "DeleteAliasParams": "DeleteAliasParams",
+  "DeleteAliasData": "DeleteAliasData",
+  "GetAliasParams": "GetAliasParams",
+  "GetAliasData": "GetAliasData"
+}
