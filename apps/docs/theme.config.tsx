@@ -31,7 +31,7 @@ export default {
   head: <Head />,
   logo: <Logo />,
   project: {
-    link: 'https://github.com/m1-dev/venture.js'
+    link: 'https://github.com/m1-dev/venture'
   },
   useNextSeoProps() {
     return {
