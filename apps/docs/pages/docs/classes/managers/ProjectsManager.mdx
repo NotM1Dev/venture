@@ -1,0 +1,35 @@
+# ProjectsManager
+
+**Extends** [BaseManager](/docs/classes/managers/BaseManager)
+
+```typescript
+export class ProjectsManager extends BaseManager {}
+```
+
+## Methods
+
+### `create(props)`
+
+Allows to create a new project with the provided configuration. It only requires the project `name` but more configuration can be provided to override the defaults. [API Reference](https://vercel.com/docs/rest-api/endpoints#create-a-new-project)
+
+#### `props`
+
+- Type: [CreateProjectProps](/docs/types/projects/CreateProjectProps)
+- Required: `true`
+
+#### Return Type
+
+- [`Promise<CreateProjectReturnType>`](/docs/types/projects/CreateProjectReturnType)
+
+### `delete(props)`
+
+Delete a specific project by passing either the project id or name. [API Reference](https://vercel.com/docs/rest-api/endpoints#delete-a-project)
+
+#### `props`
+
+- Type: [`DeleteProjectProps`](/docs/types/projects/DeleteProjectProps)
+- Required: `true`
+
+#### Return Type
+
+- [`Promise<DeleteProjectReturnType>`](/docs/types/projects/DeleteProjectReturnType)
