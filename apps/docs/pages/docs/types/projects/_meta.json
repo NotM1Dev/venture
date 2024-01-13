@@ -1,0 +1,8 @@
+{
+  "CreateProjectEnvironmentVariable": "CreateProjectEnvironmentVariable",
+  "CreateProjectGitRepository": "CreateProjectGitRepository",
+  "CreateProjectProps": "CreateProjectProps",
+  "CreateProjectReturnType": "CreateProjectReturnType",
+  "DeleteProjectProps": "DeleteProjectProps",
+  "DeleteProjectReturnType": "DeleteProjectReturnType"
+}

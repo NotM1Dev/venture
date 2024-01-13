@@ -1,0 +1,30 @@
+# CreateProjectEnvironmentVariable
+
+```typescript
+export interface CreateProjectEnvironmentVariable {
+  /**
+   * The git branch of the environment variable
+   */
+  gitBranch?: string;
+
+  /**
+   * Name of the ENV variable
+   */
+  key: string;
+
+  /**
+   * Deployment Target or Targets in which the ENV variable will be used
+   */
+  target: any[];
+
+  /**
+   * Type of the ENV variable
+   */
+  type?: 'system' | 'secret' | 'encrypted' | 'plain';
+
+  /**
+   * Value for the ENV variable
+   */
+  value: string;
+}
+```

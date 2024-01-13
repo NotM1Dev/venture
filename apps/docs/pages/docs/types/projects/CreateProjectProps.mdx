@@ -1,0 +1,88 @@
+# CreateProjectProps
+
+```typescript
+export interface CreateProjectProps {
+  /**
+   * The desired name for the project
+   */
+  name: string;
+
+  /**
+   * The Team identifier or slug to perform the request on behalf of.
+   */
+  teamId?: string;
+
+  /**
+   * The build command for this project.
+   * When `null` is used this value will be automatically detected
+   */
+  buildCommand?: string | null;
+
+  commandForIgnoringBuildStep?: string | null;
+
+  /**
+   * The dev command for this project.
+   * When `null` is used this value will be automatically detected
+   */
+  devCommand?: string;
+
+  /**
+   * Collection of ENV Variables the Project will use
+   */
+  environmentVariables?: CreateProjectEnvironmentVariable[];
+
+  /**
+   * The framework that is being used for this project.
+   * When `null` is used no framework is selected
+   */
+  framework?: Framework | null;
+
+  /**
+   * The Git Repository that will be connected to the project.
+   * When this is defined, any pushes to the specified connected
+   * Git Repository will be automatically deployed
+   */
+  gitRepository?: CreateProjectGitRepository;
+
+  /**
+   * The install command for this project.
+   * When `null` is used this value will be automatically detected
+   */
+  installCommand?: string | null;
+
+  /**
+   * The output directory of the project.
+   * When `null` is used this value will be automatically detected
+   */
+  outputDirectory?: string | null;
+
+  /**
+   * Specifies whether the source code and logs of the
+   * deployments for this project should be public or not
+   */
+  publicSource?: boolean | null;
+
+  /**
+   * The name of a directory or relative path to the source code of your project.
+   * When `null` is used it will default to the project root
+   */
+  rootDirectory?: string | null;
+
+  /**
+   * The region to deploy Serverless Functions in this project
+   */
+  serverlessFunctionRegion?: string | null;
+
+  /**
+   * Opts-out of the message prompting a CLI user
+   * to connect a Git repository in vercel link.
+   * @deprecated
+   */
+  skipGitConnectDuringLink?: boolean;
+}
+```
+
+## References
+
+- [CreateProjectEnvironmentVariable](/docs/types/projects/CreateProjectEnvironmentVariable)
+- [CreateProjectGitRepository](/docs/types/projects/CreateProjectGitRepository)
