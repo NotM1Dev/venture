@@ -1,17 +1,8 @@
 {
-  "aliases": {
-    "title": "Aliases"
-  },
-  "common": {
-    "title": "Common"
-  },
-  "deployments": {
-    "title": "Deployments"
-  },
-  "team": {
-    "title": "Team"
-  },
-  "user": {
-    "title": "User"
-  }
+  "aliases": "Aliases",
+  "common": "Common",
+  "deployments": "Deployments",
+  "domains": "Domains",
+  "team": "Team",
+  "user": "User"
 }
