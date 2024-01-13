@@ -1,0 +1,35 @@
+# DomainsManager
+
+**Extends** [BaseManager](/docs/classes/managers/BaseManager)
+
+```typescript
+export class DomainsManager extends BaseManager {}
+```
+
+## Methods
+
+### `isAvailable(props)`
+
+Check if a domain name is available for purchase. [API Reference](https://vercel.com/docs/rest-api/endpoints#check-a-domain-availability)
+
+#### `props`
+
+- Type: [DomainAvailableProps](/docs/types/domains/DomainAvailableProps)
+- Required: `true`
+
+#### Return Type
+
+- [`Promise<DomainAvailableReturnType>`](/docs/types/domains/DomainAvailableReturnType)
+
+### `price(props)`
+
+Check the price to purchase a domain and how long a single purchase period is. [API Reference]
+
+#### `props`
+
+- Type: [DomainPriceProps](/docs/types/domains/DomainPriceProps)
+- Required: `true`
+
+#### Return Type
+
+[`Promise<DomainPriceReturnType>`](/docs/types/domains/DomainPriceReturnType)

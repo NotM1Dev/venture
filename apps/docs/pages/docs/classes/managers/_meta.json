@@ -1,4 +1,5 @@
 {
   "AliasesManager": "AliasesManager",
-  "BaseManager": "BaseManager"
+  "BaseManager": "BaseManager",
+  "DomainsManager": "DomainsManager"
 }
