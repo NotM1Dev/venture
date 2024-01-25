@@ -8,7 +8,7 @@
   "scripts": {
     "lint": "tsc --noEmit",
     "dev": "tsx --env-file=./test/.env ./test/index.mts",
-    "build": "tsup"
+    "build": "rimraf dist; rollup -c"
   },
   "files": [
     "dist"
@@ -28,10 +28,13 @@
     "axios": "^1.6.4"
   },
   "devDependencies": {
+    "@rollup/plugin-typescript": "^11.1.6",
     "@types/node": "^20.10.6",
+    "builtin-modules": "^3.3.0",
     "internals": "workspace:*",
-    "prettier": "^3.1.1",
-    "tsup": "^8.0.1",
+    "rimraf": "5.0.5",
+    "rollup": "^4.9.6",
+    "rollup-plugin-dts": "6.1.0",
     "tsx": "^4.7.0",
     "typescript": "^5.3.3"
   }

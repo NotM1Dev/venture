@@ -27,10 +27,14 @@
   "license": "MIT",
   "type": "commonjs",
   "devDependencies": {
-    "@types/node": "^20.10.6",
-    "turbo": "latest",
+    "@types/node": "^20.11.6",
     "internals": "workspace:*",
-    "prettier": "^3.1.1"
+    "prettier": "^3.2.4",
+    "turbo": "latest"
   },
-  "packageManager": "pnpm@8.14.1"
+  "packageManager": "yarn@4.0.2",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ]
 }
