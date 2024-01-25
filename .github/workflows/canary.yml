@@ -12,9 +12,8 @@ jobs:
         name: Publish (Canary)
         runs-on: ubuntu-latest
         steps:
-            - uses: pnpm/action-setup@v2
-              with:
-                  version: 8
+            - name: 🧶 Install Yarn
+              run: npm install -g yarn
 
             - name: 📚 Checkout
               uses: actions/checkout@v3
@@ -25,14 +24,14 @@ jobs:
                   node-version: 18
                   registry-url: https://registry.npmjs.org
 
-            - name: 📦 Dependencies
-              run: pnpm install --no-frozen-lockfile
+            - name: 📦 Install
+              run: yarn
 
             - name: ✨ Lint
-              run: pnpm lint
+              run: yarn lint
 
             - name: 🛠️ Build
-              run: pnpm build --filter venture.js
+              run: yarn build --filter venture.js
 
             - name: 🔢 Update Version
               run: |
@@ -45,7 +44,7 @@ jobs:
                   DEBIAN_FRONTEND: noninteractive
 
             - name: 🚚 Publish
-              run: pnpm run deploy:venture.js:canary
+              run: yarn deploy:venture.js:canary
               env:
                   NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
 
@@ -61,6 +60,10 @@ jobs:
                   ")
                   echo Deprecating canary version: $VERSION_TO_DEPRECATE
                   npm deprecate $PACKAGE_NAME@$VERSION_TO_DEPRECATE "unsupported canary version"
+
+            - name: 🗑️ Remove Yarn
+              if: always()
+              run: npm uninstall -g yarn
 
               env:
                   NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}

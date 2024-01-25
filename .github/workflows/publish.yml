@@ -9,9 +9,8 @@ jobs:
         name: Publish (Stable)
         runs-on: ubuntu-latest
         steps:
-            - uses: pnpm/action-setup@v2
-              with:
-                  version: 8
+            - name: 🧶 Install Yarn
+              run: npm install -g yarn
 
             - name: 📚 Checkout
               uses: actions/checkout@v3
@@ -22,16 +21,20 @@ jobs:
                   node-version: 18
                   registry-url: https://registry.npmjs.org
 
-            - name: 📦 Dependencies
-              run: pnpm install --no-lockfile
+            - name: 📦 Install
+              run: yarn
 
             - name: ✨ Lint
-              run: pnpm lint
+              run: yarn lint
 
             - name: 🛠️ Build
-              run: pnpm build --filter venture.js
+              run: yarn build --filter venture.js
 
             - name: 🚀 Deploy
-              run: pnpm deploy:venture.js:stable
+              run: yarn deploy:venture.js:stable
               env:
                   NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
+
+            - name: 🗑️ Remove Yarn
+              if: always()
+              run: npm uninstall -g yarn
