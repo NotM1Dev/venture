@@ -2,7 +2,14 @@
   "$schema": "https://turbo.build/schema.json",
   "pipeline": {
     "build": {
-      "cache": false,
+      "dependsOn": ["^build"],
+      "outputs": [
+        ".next/**",
+        "dist/**",
+        "build/**",
+        "out/**"
+      ],
+      "cache": true,
       "persistent": false
     },
     "dev": {
