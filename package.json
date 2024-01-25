@@ -1,40 +1,40 @@
 {
-  "name": "venture.js-workspace",
-  "version": "0.0.0",
-  "description": "Monorepo for the venture.js package.",
-  "private": true,
-  "prettier": {
-    "printWidth": 110,
-    "tabWidth": 2,
-    "arrowParens": "always",
-    "trailingComma": "none",
-    "jsxSingleQuote": false,
-    "singleQuote": true,
-    "semi": true
-  },
-  "scripts": {
-    "lint": "prettier --check . --ignore-path=.prettierignore; turbo run lint",
-    "format": "prettier --write . --ignore-path=.prettierignore",
-    "dev": "turbo run dev",
-    "dev:docs": "turbo run dev --filter 'venture.js-docs'",
-    "build": "turbo run build",
-    "deploy:venture.js:stable": "cd ./packages/venture.js && pnpm publish --no-git-checks",
-    "deploy:venture.js:canary": "cd ./packages/venture.js && pnpm publish --no-git-checks --access public --tag canary"
-  },
-  "repository": "https://github.com/m1-dev/venture.js",
-  "homepage": "https://venture.js.org",
-  "author": "M1",
-  "license": "MIT",
-  "type": "commonjs",
-  "devDependencies": {
-    "@types/node": "^20.11.6",
-    "internals": "workspace:*",
-    "prettier": "^3.2.4",
-    "turbo": "latest"
-  },
-  "packageManager": "yarn@4.0.2",
-  "workspaces": [
-    "apps/*",
-    "packages/*"
-  ]
+    "name": "venture.js-workspace",
+    "version": "0.0.0",
+    "description": "Monorepo for the venture.js package.",
+    "private": true,
+    "prettier": {
+        "printWidth": 85,
+        "tabWidth": 4,
+        "arrowParens": "always",
+        "trailingComma": "none",
+        "jsxSingleQuote": false,
+        "singleQuote": true,
+        "semi": true
+    },
+    "scripts": {
+        "lint": "prettier --check . --ignore-path=.prettierignore; turbo run lint",
+        "format": "prettier --write . --ignore-path=.prettierignore",
+        "dev": "turbo run dev",
+        "dev:docs": "turbo run dev --filter 'venture.js-docs'",
+        "build": "turbo run build",
+        "deploy:venture.js:stable": "cd ./packages/venture.js && pnpm publish --no-git-checks",
+        "deploy:venture.js:canary": "cd ./packages/venture.js && pnpm publish --no-git-checks --access public --tag canary"
+    },
+    "repository": "https://github.com/m1-dev/venture.js",
+    "homepage": "https://venture.js.org",
+    "author": "M1",
+    "license": "MIT",
+    "type": "commonjs",
+    "devDependencies": {
+        "@types/node": "^20.11.6",
+        "internals": "workspace:*",
+        "prettier": "^3.2.4",
+        "turbo": "latest"
+    },
+    "packageManager": "yarn@4.0.2",
+    "workspaces": [
+        "apps/*",
+        "packages/*"
+    ]
 }

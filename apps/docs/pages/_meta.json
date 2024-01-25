@@ -1,14 +1,14 @@
 {
-  "index": {
-    "title": "Home",
-    "type": "page"
-  },
-  "examples": {
-    "title": "Examples",
-    "type": "page"
-  },
-  "docs": {
-    "title": "Documentation",
-    "type": "page"
-  }
+    "index": {
+        "title": "Home",
+        "type": "page"
+    },
+    "examples": {
+        "title": "Examples",
+        "type": "page"
+    },
+    "docs": {
+        "title": "Documentation",
+        "type": "page"
+    }
 }

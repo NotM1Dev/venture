@@ -2,6 +2,12 @@
 
 ```typescript
 export type EdgeConfigItemValue =
-  | (string | number | boolean | { [key: string]: EdgeConfigItemValue } | EdgeConfigItemValue[])
-  | null;
+    | (
+          | string
+          | number
+          | boolean
+          | { [key: string]: EdgeConfigItemValue }
+          | EdgeConfigItemValue[]
+      )
+    | null;
 ```

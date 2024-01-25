@@ -1,19 +1,19 @@
 {
-  "$schema": "https://turbo.build/schema.json",
-  "pipeline": {
-    "build": {
-      "dependsOn": ["^build"],
-      "outputs": [".next/**", "dist/**", "build/**", "out/**"],
-      "cache": true,
-      "persistent": false
-    },
-    "dev": {
-      "cache": false,
-      "persistent": true
-    },
-    "lint": {
-      "cache": false,
-      "persistent": false
+    "$schema": "https://turbo.build/schema.json",
+    "pipeline": {
+        "build": {
+            "dependsOn": ["^build"],
+            "outputs": [".next/**", "dist/**", "build/**", "out/**"],
+            "cache": true,
+            "persistent": false
+        },
+        "dev": {
+            "cache": false,
+            "persistent": true
+        },
+        "lint": {
+            "cache": false,
+            "persistent": false
+        }
     }
-  }
 }

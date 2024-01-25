@@ -1,9 +1,9 @@
 {
-  "aliases": "Aliases",
-  "common": "Common",
-  "deployments": "Deployments",
-  "domains": "Domains",
-  "projects": "Projects",
-  "team": "Team",
-  "user": "User"
+    "aliases": "Aliases",
+    "common": "Common",
+    "deployments": "Deployments",
+    "domains": "Domains",
+    "projects": "Projects",
+    "team": "Team",
+    "user": "User"
 }

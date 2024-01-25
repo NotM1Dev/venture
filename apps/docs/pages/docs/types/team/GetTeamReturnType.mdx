@@ -2,15 +2,15 @@
 
 ```typescript
 export type GetTeamReturnType<T extends GetTeamProps> = T extends {}
-  ? T['teamId'] extends string
-    ? AnyTeam
-    : T['slug'] extends string
-      ? AnyTeam
-      : ListTeamsReturnType
-  : ListTeamsReturnType;
+    ? T['teamId'] extends string
+        ? AnyTeam
+        : T['slug'] extends string
+          ? AnyTeam
+          : ListTeamsReturnType
+    : ListTeamsReturnType;
 ```
 
 ## References
 
-- [ListTeamsReturnType](/docs/types/team/ListTeamsReturnType)
-- [GetTeamProps](/docs/types/team/GetTeamProps)
+-   [ListTeamsReturnType](/docs/types/team/ListTeamsReturnType)
+-   [GetTeamProps](/docs/types/team/GetTeamProps)

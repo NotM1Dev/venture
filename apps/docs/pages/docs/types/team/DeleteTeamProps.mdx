@@ -2,30 +2,30 @@
 
 ```typescript
 export interface DeleteTeamProps {
-  /**
-   * The Team identifier or slug to perform the request on behalf of.
-   */
-  teamId: string;
-
-  /**
-   * Id of the team to be set as the new default team
-   * @example team_LLHUOMOoDlqOp8wPE4kFo9pE
-   */
-  newDefaultTeamId?: string;
-
-  /**
-   * Optional array of objects that describe the reason why the team is being deleted.
-   */
-  reasons?: {
     /**
-     * Description of the reason why the team is being deleted.
+     * The Team identifier or slug to perform the request on behalf of.
      */
-    description: string;
+    teamId: string;
 
     /**
-     * Idenitifier slug of the reason why the team is being deleted.
+     * Id of the team to be set as the new default team
+     * @example team_LLHUOMOoDlqOp8wPE4kFo9pE
      */
-    slug: string;
-  }[];
+    newDefaultTeamId?: string;
+
+    /**
+     * Optional array of objects that describe the reason why the team is being deleted.
+     */
+    reasons?: {
+        /**
+         * Description of the reason why the team is being deleted.
+         */
+        description: string;
+
+        /**
+         * Idenitifier slug of the reason why the team is being deleted.
+         */
+        slug: string;
+    }[];
 }
 ```
