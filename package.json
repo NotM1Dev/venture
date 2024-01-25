@@ -28,9 +28,9 @@
     "type": "commonjs",
     "devDependencies": {
         "@types/node": "^20.11.6",
-        "internals": "workspace:*",
         "prettier": "^3.2.4",
-        "turbo": "latest"
+        "turbo": "latest",
+        "utils": "workspace:*"
     },
     "packageManager": "yarn@4.0.2",
     "workspaces": [
