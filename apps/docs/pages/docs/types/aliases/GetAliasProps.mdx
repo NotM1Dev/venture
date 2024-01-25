@@ -2,40 +2,40 @@
 
 ```typescript
 export interface GetAliasProps {
-  /**
-   * The alias or alias ID to be retrieved
-   * @example example.vercel.app
-   */
-  idOrAlias: string;
+    /**
+     * The alias or alias ID to be retrieved
+     * @example example.vercel.app
+     */
+    idOrAlias: string;
 
-  /**
-   * Get the alias only if it was created after the provided timestamp
-   * @example 1540095775951
-   * @deprecated
-   */
-  from?: number;
+    /**
+     * Get the alias only if it was created after the provided timestamp
+     * @example 1540095775951
+     * @deprecated
+     */
+    from?: number;
 
-  /**
-   * Get the alias only if it is assigned to the provided project ID
-   * @example prj_12HKQaOmR5t5Uy6vdcQsNIiZgHGB
-   */
-  projectId?: string;
+    /**
+     * Get the alias only if it is assigned to the provided project ID
+     * @example prj_12HKQaOmR5t5Uy6vdcQsNIiZgHGB
+     */
+    projectId?: string;
 
-  /**
-   * Get the alias only if it was created after this JavaScript timestamp
-   * @example 1540095775941
-   */
-  since?: number;
+    /**
+     * Get the alias only if it was created after this JavaScript timestamp
+     * @example 1540095775941
+     */
+    since?: number;
 
-  /**
-   * The Team identifier or slug to perform the request on behalf of.
-   */
-  teamId?: string;
+    /**
+     * The Team identifier or slug to perform the request on behalf of.
+     */
+    teamId?: string;
 
-  /**
-   * Get the alias only if it was created before this JavaScript timestamp
-   * @example 1540095775951
-   */
-  until?: number;
+    /**
+     * Get the alias only if it was created before this JavaScript timestamp
+     * @example 1540095775951
+     */
+    until?: number;
 }
 ```

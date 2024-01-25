@@ -1,37 +1,37 @@
 name: 🚀 Stable Build
 
 on:
-  release:
-    types: [created]
+    release:
+        types: [created]
 
 jobs:
-  release:
-    name: Publish (Stable)
-    runs-on: ubuntu-latest
-    steps:
-      - uses: pnpm/action-setup@v2
-        with:
-          version: 8
+    release:
+        name: Publish (Stable)
+        runs-on: ubuntu-latest
+        steps:
+            - uses: pnpm/action-setup@v2
+              with:
+                  version: 8
 
-      - name: 📚 Checkout
-        uses: actions/checkout@v3
+            - name: 📚 Checkout
+              uses: actions/checkout@v3
 
-      - name: 🟢 Setup Node.js
-        uses: actions/setup-node@v2
-        with:
-          node-version: 18
-          registry-url: https://registry.npmjs.org
+            - name: 🟢 Setup Node.js
+              uses: actions/setup-node@v2
+              with:
+                  node-version: 18
+                  registry-url: https://registry.npmjs.org
 
-      - name: 📦 Dependencies
-        run: pnpm install --no-lockfile
+            - name: 📦 Dependencies
+              run: pnpm install --no-lockfile
 
-      - name: ✨ Lint
-        run: pnpm lint
+            - name: ✨ Lint
+              run: pnpm lint
 
-      - name: 🛠️ Build
-        run: pnpm build --filter venture.js
+            - name: 🛠️ Build
+              run: pnpm build --filter venture.js
 
-      - name: 🚀 Deploy
-        run: pnpm deploy:venture.js:stable
-        env:
-          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
+            - name: 🚀 Deploy
+              run: pnpm deploy:venture.js:stable
+              env:
+                  NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}

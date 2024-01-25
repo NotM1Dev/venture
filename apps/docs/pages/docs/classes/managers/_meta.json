@@ -1,6 +1,6 @@
 {
-  "AliasesManager": "AliasesManager",
-  "BaseManager": "BaseManager",
-  "DomainsManager": "DomainsManager",
-  "ProjectsManager": "ProjectsManager"
+    "AliasesManager": "AliasesManager",
+    "BaseManager": "BaseManager",
+    "DomainsManager": "DomainsManager",
+    "ProjectsManager": "ProjectsManager"
 }

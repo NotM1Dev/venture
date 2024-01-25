@@ -1,13 +1,13 @@
 {
-  "AnyTeam": "AnyTeam",
-  "CreateTeamProps": "CreateTeamProps",
-  "DeleteTeamProps": "DeleteTeamProps",
-  "DeleteTeamReturnType": "DeleteTeamReturnType",
-  "GetTeamProps": "GetTeamProps",
-  "GetTeamReturnType": "GetTeamReturnType",
-  "ListTeamsProps": "ListTeamsProps",
-  "ListTeamsReturnType": "ListTeamsReturnType",
-  "Team": "Team",
-  "TeamLimited": "TeamLimited",
-  "ValidGetTeamProps": "ValidGetTeamProps"
+    "AnyTeam": "AnyTeam",
+    "CreateTeamProps": "CreateTeamProps",
+    "DeleteTeamProps": "DeleteTeamProps",
+    "DeleteTeamReturnType": "DeleteTeamReturnType",
+    "GetTeamProps": "GetTeamProps",
+    "GetTeamReturnType": "GetTeamReturnType",
+    "ListTeamsProps": "ListTeamsProps",
+    "ListTeamsReturnType": "ListTeamsReturnType",
+    "Team": "Team",
+    "TeamLimited": "TeamLimited",
+    "ValidGetTeamProps": "ValidGetTeamProps"
 }

@@ -4,24 +4,24 @@ import dts from 'rollup-plugin-dts';
 
 /** @type {import('rollup').Options} */
 export default [
-  {
-    input: './src/index.ts',
-    output: [
-      {
-        file: 'dist/index.cjs',
-        format: 'cjs'
-      },
-      {
-        file: 'dist/index.mjs',
-        format: 'esm'
-      }
-    ],
-    external: builtins,
-    plugins: [typescript()]
-  },
-  {
-    input: './src/index.ts',
-    output: [{ file: 'dist/index.d.ts', format: 'es' }],
-    plugins: [dts()]
-  }
+    {
+        input: './src/index.ts',
+        output: [
+            {
+                file: 'dist/index.cjs',
+                format: 'cjs'
+            },
+            {
+                file: 'dist/index.mjs',
+                format: 'esm'
+            }
+        ],
+        external: builtins,
+        plugins: [typescript()]
+    },
+    {
+        input: './src/index.ts',
+        output: [{ file: 'dist/index.d.ts', format: 'es' }],
+        plugins: [dts()]
+    }
 ];

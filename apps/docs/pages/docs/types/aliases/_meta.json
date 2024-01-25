@@ -1,8 +1,8 @@
 {
-  "AssignAliasProps": "AssignAliasProps",
-  "AssignAliasReturnType": "AssignAliasReturnType",
-  "DeleteAliasProps": "DeleteAliasProps",
-  "DeleteAliasReturnType": "DeleteAliasReturnType",
-  "GetAliasProps": "GetAliasProps",
-  "GetAliasReturnType": "GetAliasReturnType"
+    "AssignAliasProps": "AssignAliasProps",
+    "AssignAliasReturnType": "AssignAliasReturnType",
+    "DeleteAliasProps": "DeleteAliasProps",
+    "DeleteAliasReturnType": "DeleteAliasReturnType",
+    "GetAliasProps": "GetAliasProps",
+    "GetAliasReturnType": "GetAliasReturnType"
 }
