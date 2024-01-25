@@ -5,10 +5,10 @@ node_modules/
 src/
 
 # lockfile
-pnpm-lock.yaml
+yarn.lock
 
 # testing
-test/
+__tests__/
 
 # logs
 npm-debug.log*
