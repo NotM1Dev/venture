@@ -5177,7 +5177,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"utils@workspace:*, utils@workspace:packages/utils":
+"utils@workspace:^, utils@workspace:packages/utils":
   version: 0.0.0-use.local
   resolution: "utils@workspace:packages/utils"
   languageName: unknown
@@ -5228,7 +5228,7 @@ __metadata:
     "@types/node": "npm:^20.11.6"
     prettier: "npm:^3.2.4"
     turbo: "npm:latest"
-    utils: "workspace:*"
+    utils: "workspace:^"
   languageName: unknown
   linkType: soft
 
@@ -5245,7 +5245,7 @@ __metadata:
     rollup-plugin-dts: "npm:6.1.0"
     tsx: "npm:^4.7.0"
     typescript: "npm:^5.3.3"
-    utils: "workspace:*"
+    utils: "workspace:^"
   languageName: unknown
   linkType: soft
 

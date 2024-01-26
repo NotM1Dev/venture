@@ -30,7 +30,7 @@
         "@types/node": "^20.11.6",
         "prettier": "^3.2.4",
         "turbo": "latest",
-        "utils": "workspace:*"
+        "utils": "workspace:^"
     },
     "packageManager": "yarn@4.0.2",
     "workspaces": [
