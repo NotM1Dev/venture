@@ -18,23 +18,16 @@ jobs:
                   node-version: 18
                   registry-url: https://registry.npmjs.org
 
-            - name: 🧶 Install Yarn
-              run: npm install -g yarn
-
             - name: 📦 Install
-              run: yarn
+              run: pnpm install
 
             - name: ✨ Lint
-              run: yarn lint
+              run: pnpm lint
 
             - name: 🛠️ Build
-              run: yarn build --filter venture.js
+              run: pnpm build --filter venture.js
 
             - name: 🚀 Deploy
-              run: yarn deploy:venture.js:stable
+              run: pnpm deploy:venture.js:stable
               env:
                   NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
-
-            - name: 🗑️ Remove Yarn
-              if: always()
-              run: npm uninstall -g yarn

@@ -21,17 +21,14 @@ jobs:
                   node-version: 18
                   registry-url: https://registry.npmjs.org
 
-            - name: 🧶 Install Yarn
-              run: npm install -g yarn
-
             - name: 📦 Install
-              run: yarn
+              run: pnpm install
 
             - name: ✨ Lint
-              run: yarn lint
+              run: pnpm lint
 
             - name: 🛠️ Build
-              run: yarn build --filter venture.js
+              run: pnpm build --filter venture.js
 
             - name: 🔢 Update Version
               run: |
@@ -44,7 +41,7 @@ jobs:
                   DEBIAN_FRONTEND: noninteractive
 
             - name: 🚚 Publish
-              run: yarn deploy:venture.js:canary
+              run: pnpm deploy:venture.js:canary
               env:
                   NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
 
@@ -60,10 +57,6 @@ jobs:
                   ")
                   echo Deprecating canary version: $VERSION_TO_DEPRECATE
                   npm deprecate $PACKAGE_NAME@$VERSION_TO_DEPRECATE "unsupported canary version"
-
-            - name: 🗑️ Remove Yarn
-              if: always()
-              run: npm uninstall -g yarn
 
               env:
                   NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
