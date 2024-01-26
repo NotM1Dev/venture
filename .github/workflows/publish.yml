@@ -9,9 +9,6 @@ jobs:
         name: Publish (Stable)
         runs-on: ubuntu-latest
         steps:
-            - name: 🧶 Install Yarn
-              run: npm install -g yarn
-
             - name: 📚 Checkout
               uses: actions/checkout@v3
 
@@ -20,6 +17,9 @@ jobs:
               with:
                   node-version: 18
                   registry-url: https://registry.npmjs.org
+
+            - name: 🧶 Install Yarn
+              run: npm install -g yarn
 
             - name: 📦 Install
               run: yarn
